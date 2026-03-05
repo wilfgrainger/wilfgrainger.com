@@ -78,8 +78,6 @@ jobs:
 
   # Deployment job
   deploy:
-    # We do not deploy from feature branches, only main.
-    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
