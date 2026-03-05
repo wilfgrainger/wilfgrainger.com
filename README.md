@@ -48,7 +48,7 @@ To enable this:
 2. Navigate to **Pages** on the left sidebar.
 3. Under **Build and deployment**, set the **Source** to **GitHub Actions**.
 
-The action will handle everything automatically. Note: `next.config.ts` has `basePath: '/wilfgrainger.com'` configured to ensure assets load correctly on the GitHub Pages subpath URL (`wilfgrainger.github.io/wilfgrainger.com/`).
+The action will handle everything automatically. It builds your Next.js application and serves the resulting HTML pages, so you don't end up just serving your repository source code (which causes `README.md` to show up).
 
 ### Cloudflare Pages
 
