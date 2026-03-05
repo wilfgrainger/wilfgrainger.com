@@ -1,10 +1,14 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { format, parseISO } from "date-fns";
+import { getSortedPostsData } from "@/lib/markdown";
+import { Calendar } from "lucide-react";
 
 export default function Home() {
+  const allPostsData = getSortedPostsData();
+
   return (
-    <div className="flex flex-col gap-12 py-12">
-      <section className="flex flex-col gap-6">
+    <div className="max-w-3xl mx-auto py-8">
+      <section className="mb-16 flex flex-col gap-6">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
           Hello, I&apos;m Wilfred Grainger.
         </h1>
@@ -16,46 +20,36 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Link
-          href="/blog"
-          className="group relative flex flex-col justify-between p-6 h-48 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all overflow-hidden"
-        >
-          <div>
-            <h2 className="text-xl font-bold mb-2">Blog</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm">Read my latest articles and thoughts on software development.</p>
-          </div>
-          <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 group-hover:translate-x-1 transition-transform">
-            View Posts <ArrowRight className="ml-1 w-4 h-4" />
-          </div>
-        </Link>
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold tracking-tight mb-4">Latest Posts</h2>
+      </div>
 
-        <Link
-          href="/projects"
-          className="group relative flex flex-col justify-between p-6 h-48 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all overflow-hidden"
-        >
-          <div>
-            <h2 className="text-xl font-bold mb-2">Projects</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm">Explore the apps, tools, and libraries I&apos;ve built.</p>
-          </div>
-          <div className="flex items-center text-sm font-medium text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform">
-            View Projects <ArrowRight className="ml-1 w-4 h-4" />
-          </div>
-        </Link>
-
-        <Link
-          href="/cv"
-          className="group relative flex flex-col justify-between p-6 h-48 bg-neutral-50 dark:bg-neutral-900 rounded-2xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-all overflow-hidden"
-        >
-          <div>
-            <h2 className="text-xl font-bold mb-2">CV / Resume</h2>
-            <p className="text-neutral-600 dark:text-neutral-400 text-sm">Check out my professional experience, skills, and education.</p>
-          </div>
-          <div className="flex items-center text-sm font-medium text-purple-600 dark:text-purple-400 group-hover:translate-x-1 transition-transform">
-            View CV <ArrowRight className="ml-1 w-4 h-4" />
-          </div>
-        </Link>
-      </section>
+      <ul className="space-y-8">
+        {allPostsData.length === 0 ? (
+          <p className="text-neutral-500 italic">No posts found.</p>
+        ) : (
+          allPostsData.map(({ id, date, title, summary }) => (
+            <li key={id} className="group flex flex-col items-start justify-between">
+              <Link href={`/blog/${id}`} className="block w-full border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 p-4 -ml-4 rounded-xl transition-colors">
+                <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
+                  <Calendar className="w-4 h-4" />
+                  <time dateTime={date}>
+                    {date ? format(parseISO(date), "LLLL d, yyyy") : 'No Date'}
+                  </time>
+                </div>
+                <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+                  {title}
+                </h2>
+                {summary && (
+                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                    {summary}
+                  </p>
+                )}
+              </Link>
+            </li>
+          ))
+        )}
+      </ul>
     </div>
   );
 }

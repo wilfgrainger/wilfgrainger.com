@@ -37,11 +37,7 @@ export default function RootLayout({
             <nav className="flex items-center gap-6 text-sm font-medium">
               <Link href="/" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
                 <Home className="w-4 h-4" />
-                <span className="hidden sm:inline">Home</span>
-              </Link>
-              <Link href="/blog" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
-                <BookOpen className="w-4 h-4" />
-                <span className="hidden sm:inline">Blog</span>
+                <span className="hidden sm:inline">Home / Blog</span>
               </Link>
               <Link href="/projects" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
                 <FolderGit2 className="w-4 h-4" />
