@@ -35,14 +35,24 @@ summary: "A brief summary of what the post is about."
 Here is my post content written in markdown.
 ```
 
-## ☁️ Deployment on Cloudflare Pages
+## ☁️ Deployment
 
-This project is configured to generate a static site (`output: 'export'` in `next.config.ts`), making it perfectly suited for hosting on Cloudflare Pages or GitHub Pages.
+This project is configured to generate a static site (`output: 'export'` in `next.config.ts`), making it perfectly suited for hosting on GitHub Pages or Cloudflare Pages.
 
-**Important:** You must use the correct build settings in your Cloudflare Pages dashboard so that it serves the exported React app, *not* the raw repository files (which causes the README to be shown instead).
+### GitHub Pages (Automated via GitHub Actions)
 
-### Cloudflare Pages Settings
+This repository includes a GitHub Action (`.github/workflows/nextjs.yml`) that automatically builds and deploys your static Next.js site to GitHub Pages whenever you push to the `main` branch.
 
+To enable this:
+1. Go to your repository **Settings**.
+2. Navigate to **Pages** on the left sidebar.
+3. Under **Build and deployment**, set the **Source** to **GitHub Actions**.
+
+The action will handle everything automatically. Note: `next.config.ts` has `basePath: '/wilfgrainger.com'` configured to ensure assets load correctly on the GitHub Pages subpath URL (`wilfgrainger.github.io/wilfgrainger.com/`).
+
+### Cloudflare Pages
+
+If you prefer to use Cloudflare Pages:
 1. Connect your GitHub repository to Cloudflare Pages.
 2. Configure the build settings as follows:
    * **Framework preset:** Next.js (Static HTML Export)
@@ -50,6 +60,4 @@ This project is configured to generate a static site (`output: 'export'` in `nex
    * **Build output directory:** `out`
 3. Save and deploy.
 
-### Note on GitHub Hosting
-
-If you are using GitHub Pages instead of Cloudflare Pages, the process is similar. A `.nojekyll` file is included in the `public/` folder so GitHub Pages doesn't attempt to build the site using Jekyll, which would inadvertently render this README as the main webpage instead of your compiled Next.js site.
+*(Note: If using Cloudflare Pages on a custom domain instead of a GitHub Pages subpath, you will need to remove the `basePath` option from `next.config.ts`)*.
