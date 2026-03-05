@@ -78,6 +78,9 @@ jobs:
 
   # Deployment job
   deploy:
+    # Add a condition so we only attempt to deploy from the main branch.
+    # This prevents failures on feature branches due to environment protection rules.
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
