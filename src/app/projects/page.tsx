@@ -3,35 +3,41 @@ import { ExternalLink, Github } from "lucide-react";
 export default function ProjectsPage() {
   const projects = [
     {
-      title: "TaskFlow UI",
-      description: "A beautifully crafted, accessible task management interface built with Next.js, Tailwind, and Framer Motion. Showcases best practices for component design and state management.",
-      url: "https://example.com/taskflow",
-      github: "https://github.com/example/taskflow",
-      tags: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+      title: "Gemini CLI",
+      description: "An interactive CLI agent specializing in software engineering tasks, built on Google's Gemini models. It automates development cycles from research to deployment.",
+      url: "https://github.com/google-gemini/gemini-cli",
+      github: "https://github.com/google-gemini/gemini-cli",
+      tags: ["TypeScript", "LLM", "CLI", "Google AI"],
     },
     {
-      title: "DevTools CLI",
-      description: "A fast, compiled command-line tool written in Go that streamlines the setup of new monorepos and local development environments.",
-      url: "https://example.com/devtools",
-      github: "https://github.com/example/devtools",
-      tags: ["Go", "CLI", "Automation"],
+      title: "Cloudflare Wrangler Action",
+      description: "A major contributor and maintainer of the official GitHub Action used to deploy Cloudflare Workers and Pages using Wrangler.",      
+      url: "https://github.com/cloudflare/wrangler-action",
+      github: "https://github.com/cloudflare/wrangler-action",
+      tags: ["GitHub Actions", "Wrangler", "DevOps", "Cloudflare"],
     },
     {
-      title: "Real-time Metrics Dashboard",
-      description: "An analytics dashboard using WebSockets and Redis to stream live metrics from production servers. Features customizable charts and alerting.",
-      url: "https://example.com/metrics",
-      github: "https://github.com/example/metrics",
-      tags: ["TypeScript", "WebSockets", "Redis", "D3.js"],
+      title: "Cloudflare Worker REST API",
+      description: "A robust boilerplate for building production-ready REST APIs using Cloudflare Workers, featuring modern routing and D1/KV integration.",
+      url: "https://github.com/wilfgrainger/cloudflare-worker-rest-api",
+      github: "https://github.com/wilfgrainger/cloudflare-worker-rest-api",
+      tags: ["TypeScript", "Cloudflare Workers", "D1", "REST"],
     },
     {
-      title: "OpenSource API Client",
-      description: "A highly-rated, type-safe API client library for a popular SaaS platform. Downloaded over 100k times per month on npm.",
-      url: "https://example.com/api-client",
-      github: "https://github.com/example/api-client",
-      tags: ["TypeScript", "npm", "Open Source"],
+      title: "Worker TypeScript Template",
+      description: "A modern starter template for building Cloudflare Workers with TypeScript, including pre-configured Vitest, Prettier, and ESLint.",
+      url: "https://github.com/wilfgrainger/worker-typescript-template",
+      github: "https://github.com/wilfgrainger/worker-typescript-template",
+      tags: ["TypeScript", "Vitest", "Cloudflare Workers"],
+    },
+    {
+      title: "Next.js Cloudflare Pages",
+      description: "Templates and examples for deploying high-performance Next.js applications to Cloudflare Pages using the Edge Runtime.",
+      url: "https://github.com/wilfgrainger/nextjs-cloudflare-pages",
+      github: "https://github.com/wilfgrainger/nextjs-cloudflare-pages",
+      tags: ["Next.js", "Cloudflare Pages", "React", "TypeScript"],
     }
   ];
-
   return (
     <div className="max-w-4xl mx-auto py-8">
       <div className="mb-12">
