@@ -4,7 +4,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main", "feature/*"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -78,8 +78,7 @@ jobs:
 
   # Deployment job
   deploy:
-    # Add a condition so we only attempt to deploy from the main branch.
-    # This prevents failures on feature branches due to environment protection rules.
+    # We do not deploy from feature branches, only main.
     if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages

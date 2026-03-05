@@ -6,11 +6,13 @@ export default function Home() {
     <div className="flex flex-col gap-12 py-12">
       <section className="flex flex-col gap-6">
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
-          Hello, I&apos;m Jules.
+          Hello, I&apos;m Wilfred Grainger.
         </h1>
         <p className="text-xl leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-2xl">
           I&apos;m a software engineer who loves building clean, modern, and performant web applications.
           Welcome to my digital garden where I share my thoughts, projects, and professional experience.
+          <br /><br />
+          You can also find me on <a href="https://www.linkedin.com/in/wilfred-grainger/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">LinkedIn</a>.
         </p>
       </section>
 

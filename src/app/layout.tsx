@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Personal Blog & CV",
-  description: "A slick personal blog, portfolio, and CV site",
+  title: "Wilfred Grainger - Personal Blog & CV",
+  description: "A slick personal blog, portfolio, and CV site by Wilfred Grainger",
 };
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 max-w-4xl h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-lg tracking-tight hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">
-              Jules
+              Wilfred Grainger
             </Link>
             <nav className="flex items-center gap-6 text-sm font-medium">
               <Link href="/" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
@@ -58,7 +58,7 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t border-neutral-200 dark:border-neutral-800 py-6 mt-12 text-center text-sm text-neutral-500 dark:text-neutral-400">
-          <p>© {new Date().getFullYear()} Jules. Built with Next.js.</p>
+          <p>© {new Date().getFullYear()} Wilfred Grainger. Built with Next.js.</p>
         </footer>
       </body>
     </html>
