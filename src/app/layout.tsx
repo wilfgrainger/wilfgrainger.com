@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { Home, BookOpen, FolderGit2, UserRound } from "lucide-react";
+import { Home, BookOpen, FolderGit2 } from "lucide-react";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Wilfred Grainger - Personal Blog & CV",
-  description: "A slick personal blog, portfolio, and CV site by Wilfred Grainger",
+  title: "Wilfred Grainger - Personal Blog",
+  description: "A slick personal blog and portfolio site by Wilfred Grainger",
 };
 
 export default function RootLayout({
@@ -42,10 +42,6 @@ export default function RootLayout({
               <Link href="/projects" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
                 <FolderGit2 className="w-4 h-4" />
                 <span className="hidden sm:inline">Projects</span>
-              </Link>
-              <Link href="/cv" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
-                <UserRound className="w-4 h-4" />
-                <span className="hidden sm:inline">CV</span>
               </Link>
             </nav>
           </div>
