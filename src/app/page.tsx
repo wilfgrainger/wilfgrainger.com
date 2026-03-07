@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
           Hello, I&apos;m Wilfred Grainger.
         </h1>
-        <p className="text-xl leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-2xl">
+        <p className="text-lg sm:text-xl leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-2xl">
           I&apos;m a software engineer who loves building clean, modern, and performant web applications.
           Welcome to my digital garden where I share my thoughts, projects, and professional experience.
           <br /><br />
@@ -20,8 +20,8 @@ export default function Home() {
         </p>
       </section>
 
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold tracking-tight mb-4">Latest Posts</h2>
+      <div className="mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">Latest Posts</h2>
       </div>
 
       <ul className="space-y-8">
@@ -30,18 +30,18 @@ export default function Home() {
         ) : (
           allPostsData.map(({ id, date, title, summary }) => (
             <li key={id} className="group flex flex-col items-start justify-between">
-              <Link href={`/blog/${id}`} className="block w-full border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 p-4 -ml-4 rounded-xl transition-colors">
-                <div className="flex items-center gap-2 text-sm text-neutral-500 mb-2">
-                  <Calendar className="w-4 h-4" />
+              <Link href={`/blog/${id}`} className="block w-full border border-transparent hover:border-neutral-200 dark:hover:border-neutral-800 p-0 sm:p-4 sm:-ml-4 rounded-xl transition-colors">
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 mb-2">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                   <time dateTime={date}>
                     {date ? format(parseISO(date), "LLLL d, yyyy") : 'No Date'}
                   </time>
                 </div>
-                <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
+                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2">
                   {title}
                 </h2>
                 {summary && (
-                  <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     {summary}
                   </p>
                 )}
