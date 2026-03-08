@@ -31,12 +31,13 @@ export default function RootLayout({
       >
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl h-16 flex items-center justify-between">
-            <Link href="/" className="font-bold text-base sm:text-lg tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2">
-              <span className="relative flex h-6 w-8 items-center justify-center overflow-hidden rounded bg-black border border-neutral-700">
-                <span className="absolute inset-0 bg-[linear-gradient(to_bottom,#ff0000_16.6%,#ffff00_16.6%,#ffff00_33.2%,#00ff00_33.2%,#00ff00_49.8%,#00ffff_49.8%,#00ffff_66.4%,#0000ff_66.4%,#0000ff_83%,#ff00ff_83%)] opacity-80 mix-blend-screen"></span>
-                <span className="relative block h-1 w-full bg-white/20"></span>
+            <Link href="/" className="font-bold text-base sm:text-lg tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2 group">
+              <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded bg-black border border-neutral-800 shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(255,0,255,0.4)] transition-shadow duration-300">
+                <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:4px_4px] mix-blend-screen opacity-50 z-10"></span>
+                <span className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-fuchsia-500/20 to-yellow-500/20 z-0"></span>
+                <span className="relative z-20 font-black text-xl italic bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 drop-shadow-[0_0_2px_rgba(255,255,255,0.8)] tracking-tighter" style={{ fontFamily: 'monospace' }}>S</span>
               </span>
-              Wilfred Grainger - Blog
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-neutral-100 dark:to-neutral-400 font-extrabold">Wilfred Grainger</span>
             </Link>
             <nav className="flex items-center gap-4 sm:gap-6 text-sm font-medium">
               <Link href="/" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">

@@ -66,7 +66,12 @@ export async function getPostData(id: string): Promise<PostContent> {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  let contentHtml = processedContent.toString();
+
+  // Fix image paths for production deployment on GitHub Pages
+  if (process.env.NODE_ENV === 'production') {
+    contentHtml = contentHtml.replace(/src="\/images\//g, 'src="/wilfgrainger.com/images/');
+  }
 
   // Combine the data with the id and contentHtml
   return {
