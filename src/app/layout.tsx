@@ -40,14 +40,9 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-base sm:text-lg tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2 group">
-              <div className="glitch-wrapper">
-                <span
-                  className="glitch bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-fuchsia-500 dark:from-cyan-400 dark:to-fuchsia-400 font-black italic tracking-tighter text-xl sm:text-2xl drop-shadow-[0_0_2px_rgba(0,255,255,0.8)]"
-                  data-text="WILFRED GRAINGER"
-                >
-                  WILFRED GRAINGER
-                </span>
-              </div>
+              <span className="synthwave-text text-xl sm:text-2xl tracking-tighter">
+                WILFRED GRAINGER
+              </span>
             </Link>
             <nav className="flex items-center gap-4 sm:gap-6 text-sm font-medium">
               <Link href="/" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
