@@ -25,7 +25,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <article className="max-w-3xl mx-auto py-8">
       <div className="mb-8">
         <Link
-          href="/blog"
+          href="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-300 transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" /> Back to blog

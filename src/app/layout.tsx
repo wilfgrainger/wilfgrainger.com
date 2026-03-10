@@ -43,7 +43,7 @@ export default function RootLayout({
               <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded bg-black border border-neutral-800 shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(255,0,255,0.4)] transition-shadow duration-300">
                 <span className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,255,255,0.2)_50%,transparent_75%,transparent_100%)] bg-[length:4px_4px] mix-blend-screen opacity-50 z-10"></span>
                 <span className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-fuchsia-500/20 to-yellow-500/20 z-0"></span>
-                <span className="relative z-20 font-black text-xl italic bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 drop-shadow-[0_0_2px_rgba(255,255,255,0.8)] tracking-tighter" style={{ fontFamily: 'monospace' }}>S</span>
+                <span className="relative z-20 font-black text-xl italic bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-yellow-400 drop-shadow-[0_0_2px_rgba(255,255,255,0.8)] tracking-tighter" style={{ fontFamily: 'monospace' }}>W</span>
               </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-neutral-100 dark:to-neutral-400 font-extrabold">Wilfred Grainger</span>
             </Link>
