@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { Home, FolderGit2, Mail } from "lucide-react";
+import { Home, FolderGit2, Linkedin } from "lucide-react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -56,9 +56,9 @@ export default function RootLayout({
                 <FolderGit2 className="w-4 h-4" />
                 <span className="hidden sm:inline">Projects</span>
               </Link>
-              <a href="mailto:wilf@wilfgrainger.com" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
-                <Mail className="w-4 h-4" />
-                <span className="hidden sm:inline">Contact</span>
+              <a href="https://www.linkedin.com/in/wilfred-grainger/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
+                <Linkedin className="w-4 h-4" />
+                <span className="hidden sm:inline">LinkedIn</span>
               </a>
               <ThemeToggle />
             </nav>

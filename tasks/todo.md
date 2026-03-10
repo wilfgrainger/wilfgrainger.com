@@ -27,3 +27,9 @@
 1.  **UX Fixes:** Addressed the 404 issue on blog "Back" button, corrected layout text to represent user ("W" for Wilfred), and fixed the `ThemeToggle` moon icon alignment by adding `relative` class.
 2.  **Code Check:** Ensured linting (`npm run lint`) and building (`npm run build`) passed with no errors.
 3.  **Visual Verification:** Captured via Playwright and verified locally that changes render seamlessly on both the home page and individual blog posts.
+
+## Phase 5: Retrofit and Compliance Fixes (In Progress)
+- [x] Create Daystem `.spec` framework `.spec/system.md`, `.spec/interface.json`, `.spec/infra.md`.
+- [x] Apply `.cursorrules` to local development framework.
+- [x] Retrofit codebase headers (`src/app/layout.tsx`) replacing a faulty mailto link with the correct user LinkedIn URL `https://www.linkedin.com/in/wilfred-grainger/` as specified in their prompt.
+- [ ] Incorporate correct AWS Professional Services role into about/projects/content.

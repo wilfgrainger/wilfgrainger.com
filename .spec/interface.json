@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "daystem_version": "1.0",
+    "status": "draft",
+    "created_utc": "TBD",
+    "last_updated_utc": "TBD"
+  },
+  "project": {
+    "codename": "Wilfred Grainger CV",
+    "vibe": "Slick professional blog",
+    "intent": "Personal portfolio",
+    "repo_type": "Next.js Static Site",
+    "primary_stack": "Next.js, TypeScript, Tailwind",
+    "data_sensitivity": "Public"
+  },
+  "contracts": {
+    "public_apis": [],
+    "events": [],
+    "data_models": {},
+    "validation_rules": [],
+    "breaking_change_policy": "no_code_first_payload_changes"
+  },
+  "tooling": {
+    "structured_output_target": "json_schema",
+    "notes": "Use this file as the single source of truth for payloads and schemas."
+  }
+}
