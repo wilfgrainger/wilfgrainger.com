@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
-import { Home, BookOpen, FolderGit2 } from "lucide-react";
+import { Home, FolderGit2, Mail } from "lucide-react";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-base sm:text-lg tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2 group">
@@ -48,6 +56,11 @@ export default function RootLayout({
                 <FolderGit2 className="w-4 h-4" />
                 <span className="hidden sm:inline">Projects</span>
               </Link>
+              <a href="mailto:wilf@wilfgrainger.com" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
+                <Mail className="w-4 h-4" />
+                <span className="hidden sm:inline">Contact</span>
+              </a>
+              <ThemeToggle />
             </nav>
           </div>
         </header>
@@ -57,6 +70,7 @@ export default function RootLayout({
         <footer className="border-t border-neutral-200 dark:border-neutral-800 py-6 mt-12 text-center text-sm text-neutral-500 dark:text-neutral-400">
           <p>© {new Date().getFullYear()} Wilfred Grainger. Built with Next.js.</p>
         </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
