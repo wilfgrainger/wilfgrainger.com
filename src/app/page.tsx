@@ -11,7 +11,7 @@ export default function Home() {
       <div className="mb-12 sm:mb-16 border-b border-neutral-200 dark:border-neutral-800 pb-8">
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">Hi, I&apos;m Wilfred.</h1>
         <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-          I write about software engineering, technology, AI and life.
+          I&apos;m currently working at <strong className="text-neutral-900 dark:text-neutral-100 font-semibold">AWS Professional Services (ProServe)</strong>. I write about software engineering, infrastructure, and technology.
         </p>
       </div>
 
