@@ -40,8 +40,8 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl h-16 flex items-center justify-between">
             <Link href="/" className="font-bold text-base sm:text-lg tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2 group">
-              <span className="synthwave-text text-xl sm:text-2xl tracking-tighter">
-                WILFRED GRAINGER
+              <span className="font-serif font-black text-xl sm:text-2xl tracking-tight text-neutral-900 dark:text-neutral-50">
+                Wilfred Grainger
               </span>
             </Link>
             <nav className="flex items-center gap-4 sm:gap-6 text-sm font-medium">

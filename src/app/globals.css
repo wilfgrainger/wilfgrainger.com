@@ -26,35 +26,3 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   @apply antialiased selection:bg-neutral-800 selection:text-white dark:selection:bg-neutral-200 dark:selection:text-black;
 }
-
-/* 80s Synthwave Chrome Text Effect */
-.synthwave-text {
-  display: inline-block;
-  font-family: var(--font-mono), monospace;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-style: italic;
-  letter-spacing: 0.05em;
-  /* Complex gradient for chrome reflection effect */
-  background: linear-gradient(
-    to bottom,
-    #00f0ff 0%,
-    #ffffff 45%,
-    #171717 50%,
-    #ff00ff 55%,
-    #7000ff 100%
-  );
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
-  /* Strong dark purple/black stroke and distinct drop shadow for high contrast in light mode */
-  -webkit-text-stroke: 1.5px #1a0033;
-  filter: drop-shadow(0px 3px 0px #4d0099) drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.4));
-}
-
-/* Adjustments for dark mode */
-.dark .synthwave-text {
-  /* Crisp white outline and strong glowing neon shadow for dark mode visibility */
-  -webkit-text-stroke: 1px #ffffff;
-  filter: drop-shadow(0px 0px 8px rgba(255, 0, 255, 0.8)) drop-shadow(0px 0px 12px rgba(0, 240, 255, 0.5));
-}
