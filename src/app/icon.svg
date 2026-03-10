@@ -1,40 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#00f0ff" />
-      <stop offset="45%" stop-color="#ffffff" />
-      <stop offset="50%" stop-color="#171717" />
-      <stop offset="55%" stop-color="#ff00ff" />
-      <stop offset="100%" stop-color="#7000ff" />
-    </linearGradient>
-    <filter id="neonGlow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-
-  <!-- Retro Grid / Dark Background -->
-  <rect width="100" height="100" fill="#0b001a" rx="15" ry="15"/>
-
-  <!-- Neon Triangle Background -->
-  <polygon points="50,15 90,80 10,80" fill="none" stroke="#ff00ff" stroke-width="3" filter="url(#neonGlow)" opacity="0.6"/>
-
-  <!-- WG Text with Chrome Gradient -->
+  <rect width="100" height="100" fill="#FF6719" rx="15" ry="15"/>
   <text
     x="50"
     y="68"
-    font-family="monospace"
-    font-size="45"
-    font-weight="900"
-    font-style="italic"
-    fill="url(#chromeGrad)"
+    font-family="serif"
+    font-size="50"
+    font-weight="bold"
+    fill="#FFFFFF"
     text-anchor="middle"
-    stroke="#ffffff"
-    stroke-width="1.5"
-    filter="url(#neonGlow)"
   >
     WG
   </text>
