@@ -10,27 +10,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Gemini CLI",
-    description: "An interactive CLI agent specializing in software engineering tasks, built on Google's Gemini models. It automates development cycles from research to deployment.",
-    url: "https://github.com/google-gemini/gemini-cli",
-    github: "https://github.com/google-gemini/gemini-cli",
-    tags: ["TypeScript", "LLM", "CLI", "Google AI"],
-  },
-  {
-    title: "Cloudflare Wrangler Action",
-    description: "A major contributor and maintainer of the official GitHub Action used to deploy Cloudflare Workers and Pages using Wrangler.",
-    url: "https://github.com/cloudflare/wrangler-action",
-    github: "https://github.com/cloudflare/wrangler-action",
-    tags: ["GitHub Actions", "Wrangler", "DevOps", "Cloudflare"],
-  },
-  {
-    title: "find-close-meteorites",
-    description: "A Python-based demo that interacts with NASA's Open Data APIs to find and list meteorite landing sites near a given location.",
-    url: "https://github.com/wilfgrainger/find-close-meteorites",
-    github: "https://github.com/wilfgrainger/find-close-meteorites",
-    tags: ["Python", "NASA API", "Data"],
-  },
-  {
     title: "zerobytemode",
     description: "A project exploring low-level data handling and zero-byte encoding modes, often used in performance-critical JavaScript applications.",
     url: "https://github.com/wilfgrainger/zerobytemode",
@@ -64,6 +43,13 @@ const projects: Project[] = [
     url: "https://github.com/wilfgrainger/broono",
     github: "https://github.com/wilfgrainger/broono",
     tags: ["TypeScript", "Tooling", "Utility"],
+  },
+  {
+    title: "wilfgrainger.com",
+    description: "My personal blog and CV site built with Next.js (App Router), TypeScript, and Tailwind CSS.",
+    url: "https://wilfgrainger.com",
+    github: "https://github.com/wilfgrainger/wilfgrainger.com",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Portfolio"],
   }
 ];
 
