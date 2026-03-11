@@ -84,14 +84,16 @@ export default function ProjectsPage() {
               </div>
 
               <div className="flex items-center gap-4 pt-4 border-t border-neutral-100 dark:border-neutral-800">
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" /> Live Demo
-                </a>
+                {project.url !== project.github && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  >
+                    <ExternalLink className="w-4 h-4" /> Live Demo
+                  </a>
+                )}
                 <a
                   href={project.github}
                   target="_blank"

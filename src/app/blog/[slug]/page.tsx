@@ -1,6 +1,6 @@
 import { getPostData, getSortedPostsData } from "@/lib/markdown";
 import { format, parseISO } from "date-fns";
-import { Calendar, ArrowLeft } from "lucide-react";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -35,11 +35,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {postData.title}
         </h1>
 
-        <div className="flex items-center gap-2 text-sm text-neutral-500 font-medium">
-          <Calendar className="w-4 h-4" />
-          <time dateTime={postData.date}>
-            {postData.date ? format(parseISO(postData.date), "LLLL d, yyyy") : 'No Date'}
-          </time>
+        <div className="flex items-center gap-4 text-sm text-neutral-500 font-medium flex-wrap">
+          <span className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" />
+            <time dateTime={postData.date}>
+              {postData.date ? format(parseISO(postData.date), "LLLL d, yyyy") : 'No Date'}
+            </time>
+          </span>
+          <span className="flex items-center gap-2">
+            <Clock className="w-4 h-4" />
+            {postData.readingTime} min read
+          </span>
         </div>
       </div>
 

@@ -15,6 +15,7 @@ export interface PostData {
 
 export interface PostContent extends PostData {
   contentHtml: string;
+  readingTime: number;
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -73,6 +74,10 @@ export async function getPostData(id: string): Promise<PostContent> {
     contentHtml = contentHtml.replace(/src="\/images\//g, 'src="/wilfgrainger.com/images/');
   }
 
+  // Estimate reading time (average 200 words per minute)
+  const wordCount = matterResult.content.trim().split(/\s+/).length;
+  const readingTime = Math.max(1, Math.round(wordCount / 200));
+
   // Combine the data with the id and contentHtml
   return {
     id,
@@ -80,5 +85,6 @@ export async function getPostData(id: string): Promise<PostContent> {
     title: matterResult.data.title || 'Untitled',
     date: matterResult.data.date || '',
     summary: matterResult.data.summary || '',
+    readingTime,
   };
 }

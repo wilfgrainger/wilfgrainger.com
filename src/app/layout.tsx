@@ -5,6 +5,7 @@ import { Home, FolderGit2, Linkedin } from "lucide-react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { NavLink } from "@/components/NavLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,14 +46,14 @@ export default function RootLayout({
               </span>
             </Link>
             <nav className="flex items-center gap-4 sm:gap-6 text-sm font-medium">
-              <Link href="/" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
+              <NavLink href="/">
                 <Home className="w-4 h-4" />
                 <span className="hidden sm:inline">Home / Blog</span>
-              </Link>
-              <Link href="/projects" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
+              </NavLink>
+              <NavLink href="/projects">
                 <FolderGit2 className="w-4 h-4" />
                 <span className="hidden sm:inline">Projects</span>
-              </Link>
+              </NavLink>
               <a href="https://www.linkedin.com/in/wilfred-grainger/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors">
                 <Linkedin className="w-4 h-4" />
                 <span className="hidden sm:inline">LinkedIn</span>
