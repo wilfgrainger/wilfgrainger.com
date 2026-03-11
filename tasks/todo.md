@@ -32,4 +32,4 @@
 - [x] Create Daystem `.spec` framework `.spec/system.md`, `.spec/interface.json`, `.spec/infra.md`.
 - [x] Apply `.cursorrules` to local development framework.
 - [x] Retrofit codebase headers (`src/app/layout.tsx`) replacing a faulty mailto link with the correct user LinkedIn URL `https://www.linkedin.com/in/wilfred-grainger/` as specified in their prompt.
-- [ ] Incorporate correct AWS Professional Services role into about/projects/content.
+- [x] Incorporate correct AWS Professional Services role into about/projects/content.

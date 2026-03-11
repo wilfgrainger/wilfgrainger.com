@@ -59,7 +59,7 @@ export default function ProjectsPage() {
       <div className="mb-12">
         <h1 className="text-4xl font-extrabold tracking-tight mb-4">Projects</h1>
         <p className="text-lg text-neutral-600 dark:text-neutral-400">
-          A collection of my recent work, open-source contributions, and side projects.
+          A collection of my recent work, open-source contributions, and side projects. I&apos;m a Senior Cloud Architect Consultant at AWS Professional Services (Global Financial Services), and these projects span infrastructure, tooling, and web development.
         </p>
       </div>
 
