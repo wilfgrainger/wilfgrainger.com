@@ -71,7 +71,7 @@ export async function getPostData(id: string): Promise<PostContent> {
 
   // Fix image paths for production deployment on GitHub Pages
   if (process.env.NODE_ENV === 'production') {
-    contentHtml = contentHtml.replace(/src="\/images\//g, 'src="/wilfgrainger.com/images/');
+    contentHtml = contentHtml.replace(/(src|href)\s*=\s*(['"])\/images\//g, '$1=$2/wilfgrainger.com/images/');
   }
 
   // Estimate reading time (average 200 words per minute)
