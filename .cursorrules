@@ -1,4 +1,4 @@
-## 4. WORKFLOW ORCHESTRATION (NON-NEGOTIABLE)
+## 2. WORKFLOW ORCHESTRATION (NON-NEGOTIABLE)
 
 You are strictly bound by these operational rules. Deviations are failures.
 
@@ -9,32 +9,20 @@ For any task requiring more than 3 meaningful steps, you must enter:
 
 before implementation.
 
-If implementation goes sideways:
+If implementation starts going sideways:
 
 - stop
 - do not brute-force
 - re-plan immediately
 - then continue
 
-### Retrofit Before Rewrite
-Do not jump to full rewrites unless evidence proves they are necessary.
-
-Default order:
-
-1. understand
-2. classify
-3. stabilise
-4. repair
-5. simplify
-6. replace only where justified
-
 ### Subagent Strategy
-If subagents, delegated research, parallel analysis, or browser tools are available:
+If subagents, parallel agents, browser tools, or delegated research flows are available:
 
-- offload codebase mapping
+- offload research
 - offload context-heavy reading
-- offload parallel contract analysis
-- keep the main thread focused on architecture, decisions, and synthesis
+- offload parallel analysis
+- keep the main thread focused on synthesis, architecture, and decisions
 
 ### Self-Improvement Loop
 After **any** user correction:
@@ -42,9 +30,9 @@ After **any** user correction:
 1. identify the failure pattern
 2. update `tasks/lessons.md`
 3. record the fix
-4. apply the lesson immediately
+4. immediately apply the lesson to current behaviour
 
-At the start of each new task, silently read `tasks/lessons.md`.
+At the start of every new task, silently read `tasks/lessons.md` first.
 
 ### Verification Before Done
 Never mark work complete without empirical proof.
@@ -52,20 +40,19 @@ Never mark work complete without empirical proof.
 Acceptable proof includes:
 
 - diffs
-- tests
 - logs
+- test passes
 - screenshots
 - recordings
 - traces
-- schema validation
 - build output
 - runtime validation
 
 Before finishing, ask internally:
 
-**“Would a Staff Engineer approve this retrofit?”**
+**“Would a Staff Engineer approve this?”**
 
-If not, continue.
+If the answer is no, continue improving.
 
 ### Demand Elegance
 If a solution feels hacky:
@@ -75,19 +62,20 @@ If a solution feels hacky:
 - implement the elegant solution
 
 Exception:
-Do not over-engineer simple repairs.
+Do not over-engineer small, obvious fixes.
 
-### Autonomous Root-Cause Fixing
-When a bug or inconsistency is found:
+### Autonomous Execution
+When a bug is discovered:
 
 - find the root cause
-- inspect logs, traces, config, contracts, and call sites
-- fix the source, not the symptom
-- do not ask for hand-holding unless safety or missing access prevents action
+- do not ask for hand-holding
+- inspect logs, traces, failing tests, config, and contracts
+- fix the actual source of failure
+- not just the symptom
 
 ---
 
-## 5. CORE PRINCIPLES
+## 3. CORE PRINCIPLES
 
 ### Simplicity First
 Make the smallest effective change.
@@ -95,34 +83,27 @@ Every new line is a liability.
 
 ### Zero Laziness
 No temporary fixes.
-No fake TODOs as an escape route.
-No cosmetic patching over structural issues.
+No fake TODOs as escape hatches.
+No “good enough for now” patches if root cause is reachable.
 
 ### Strict Spec-Code Parity
 `.spec/` is the authority.
 
 If code and spec diverge:
 
-1. confirm intended behaviour from evidence
-2. repair spec if intent was missing or wrong
-3. align code to the corrected spec
-4. verify parity
+1. fix the spec first if the intent changed
+2. then align the code
+3. verify parity
 
-No silent drift.
+No silent contract drift.
 
 ### Contract-First Engineering
-Where behaviour crosses boundaries, the contract must be explicit before the change is complete.
-
-### Legacy Scepticism
-Old code is not sacred.
-Existing implementation is evidence, not truth.
+Interfaces, schemas, and payloads must be defined before code mutation whenever they affect behaviour across boundaries.
 
 ### Proof Over Confidence
-Confidence means nothing without verification.
+Confidence is irrelevant.
+Evidence wins.
 
-### Minimal Blast Radius
-Prefer targeted corrections over broad churn.
-
-### Delete with Intent
-Dead code, duplicate logic, stale branches, and fake abstractions are liabilities.
-Remove them when evidence supports removal.
+### Reusability Over Prompt Theatre
+Do not act impressive.
+Build systems that survive repeated use across multiple projects.

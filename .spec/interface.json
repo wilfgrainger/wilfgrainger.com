@@ -6,12 +6,12 @@
     "last_updated_utc": "TBD"
   },
   "project": {
-    "codename": "Wilfred Grainger CV",
-    "vibe": "Slick professional blog",
-    "intent": "Personal portfolio",
-    "repo_type": "Next.js Static Site",
-    "primary_stack": "Next.js, TypeScript, Tailwind",
-    "data_sensitivity": "Public"
+    "codename": "wilfred-grainger-cv-blog",
+    "vibe": "Professional, clean, high-signal, performant",
+    "intent": "Digital presence, resume, and technical blog",
+    "repo_type": "frontend",
+    "primary_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
+    "data_sensitivity": "public"
   },
   "contracts": {
     "public_apis": [],

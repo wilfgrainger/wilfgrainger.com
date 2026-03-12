@@ -4,19 +4,21 @@
 TBD
 
 ## Core Vibe
-Slick, professional personal portfolio and blog.
+Professional, clean, high-signal, and performant. Reflects the standard of an AWS Professional Services engineer.
 
 ## Intent
-Showcase Wilfred Grainger's CV, projects, and thoughts.
+To serve as the definitive digital presence, resume, and technical blog for Wilfred Grainger.
 
 ## Problem Being Solved
-Provide a centralized online presence for professional representation.
+Providing a centralized, authoritative source for Wilfred Grainger's professional experience, skills, and technical insights.
 
 ## Non-Goals
-TBD
+- Overly complex interactive animations.
+- Heavy reliance on client-side state for static content.
+- E-commerce or heavy backend processing.
 
 ## Users
-Recruiters, clients, and fellow engineers.
+Recruiters, hiring managers, fellow engineers, and technical readers seeking insights or background on Wilfred Grainger.
 
 ## Core Journeys
 - Reading blog posts
