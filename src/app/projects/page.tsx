@@ -55,58 +55,63 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-4xl mx-auto py-8">
-      <div className="mb-12">
-        <h1 className="text-4xl font-extrabold tracking-tight mb-4">Projects</h1>
-        <p className="text-lg text-neutral-600 dark:text-neutral-400">
-          A collection of my recent work, open-source contributions, and side projects.
+    <div className="max-w-4xl mx-auto">
+      <div className="mb-14 animate-fade-up">
+        <p className="font-mono text-xs sm:text-sm tracking-widest uppercase text-[var(--accent)] mb-4">
+          Open Source & Side Projects
+        </p>
+        <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">Projects</h1>
+        <p className="text-lg text-[var(--text-muted)] max-w-2xl">
+          A collection of recent work, open-source contributions, and side projects.
         </p>
       </div>
 
-      <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-0 divide-y divide-[var(--border)]">
         {projects.map((project, index) => (
-          <li
+          <div
             key={index}
-            className="group flex flex-col bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors rounded-xl overflow-hidden shadow-sm"
+            className={`group py-8 sm:py-10 animate-fade-up stagger-${Math.min(index + 1, 5)}`}
           >
-            <div className="p-6 flex-1 flex flex-col">
-              <h2 className="text-xl font-bold mb-3">{project.title}</h2>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6 flex-1 leading-relaxed text-sm">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                {project.tags.map(tag => (
-                  <span key={tag} className="px-2.5 py-1 bg-neutral-100 dark:bg-neutral-800 text-xs font-medium rounded-md border border-neutral-200 dark:border-neutral-700">
-                    {tag}
-                  </span>
-                ))}
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <h2 className="font-display text-xl sm:text-2xl font-bold tracking-tight group-hover:text-[var(--accent)] transition-colors mb-2">
+                  {project.title}
+                </h2>
+                <p className="text-[var(--text-muted)] leading-relaxed text-sm sm:text-base mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span key={tag} className="font-mono text-[10px] sm:text-xs tracking-wider uppercase px-2.5 py-1 bg-[var(--surface)] border border-[var(--border)] rounded-md">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-
-              <div className="flex items-center gap-4 pt-4 border-t border-neutral-100 dark:border-neutral-800">
+              <div className="flex items-center gap-4 sm:pt-1 shrink-0">
                 {project.url !== project.github && (
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                    className="flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
                   >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
+                    <ExternalLink className="w-4 h-4" /> Live
                   </a>
                 )}
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors"
+                  className="flex items-center gap-1.5 text-sm font-medium text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
                 >
                   <Github className="w-4 h-4" /> Source
                 </a>
               </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
