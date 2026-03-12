@@ -22,8 +22,8 @@ export function NavLink({ href, children, className, ...props }: NavLinkProps) {
       href={href}
       className={`flex items-center gap-2 transition-colors ${
         isActive
-          ? "text-neutral-900 dark:text-neutral-50 font-semibold"
-          : "hover:text-neutral-500 dark:hover:text-neutral-400"
+          ? "text-[var(--accent)] font-semibold"
+          : "text-[var(--text-muted)] hover:text-[var(--accent)]"
       } ${className ?? ""}`}
       {...props}
     >

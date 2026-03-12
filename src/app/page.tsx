@@ -1,62 +1,68 @@
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { getSortedPostsData } from "@/lib/markdown";
-import { Calendar, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const allPostsData = getSortedPostsData();
   const recentPosts = allPostsData.slice(0, 5);
 
   return (
-    <div className="max-w-3xl mx-auto py-8">
-      <div className="mb-12 sm:mb-16 border-b border-neutral-200 dark:border-neutral-800 pb-8">
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4">
-          Hi, I&apos;m Wilfred 👋
-        </h1>
-        <p className="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed mb-6">
-          I write about software engineering, infrastructure, and technology.
+    <div className="max-w-4xl mx-auto">
+      {/* Hero Section */}
+      <div className="mb-16 sm:mb-20 animate-fade-up">
+        <p className="font-mono text-xs sm:text-sm tracking-widest uppercase text-[var(--accent)] mb-4">
+          Senior Cloud Architect · AWS Professional Services
         </p>
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05]">
+          Hi, I&apos;m Wilfred<span className="text-[var(--accent)]">.</span>
+        </h1>
+        <p className="text-lg sm:text-xl text-[var(--text-muted)] leading-relaxed max-w-2xl">
+          I write about software engineering, cloud infrastructure, and the technology that shapes how we build.
+        </p>
+        <div className="mt-8 h-px bg-gradient-to-r from-[var(--accent)] via-[var(--border)] to-transparent" />
       </div>
 
-      <div className="mb-8 sm:mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-4 flex items-end justify-between">
+      {/* Section Header */}
+      <div className="mb-10 sm:mb-12 animate-fade-up stagger-1 flex items-end justify-between">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-2">Recent Posts</h2>
-          <p className="text-neutral-500 dark:text-neutral-400 text-sm sm:text-base">Thoughts, stories and ideas.</p>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight mb-1">Recent Posts</h2>
+          <p className="text-[var(--text-muted)] text-sm">Thoughts, stories and ideas.</p>
         </div>
         {allPostsData.length > 5 && (
           <Link
             href="/blog"
-            className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 shrink-0"
+            className="text-sm font-medium accent-link flex items-center gap-1 shrink-0"
           >
             View all <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         )}
       </div>
 
-      <div className="space-y-12">
+      {/* Posts List */}
+      <div className="space-y-0 divide-y divide-[var(--border)]">
         {recentPosts.length === 0 ? (
-          <p className="text-neutral-500 italic">No posts found.</p>
+          <p className="text-[var(--text-muted)] italic py-8">No posts found.</p>
         ) : (
-          recentPosts.map(({ id, date, title, summary }) => (
-            <article key={id} className="group flex flex-col items-start justify-between">
-              <Link href={`/blog/${id}`} className="block w-full transition-colors">
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 mb-3">
-                  <Calendar className="w-4 h-4" />
-                  <time dateTime={date} className="font-medium">
-                    {date ? format(parseISO(date), "LLLL d, yyyy") : 'No Date'}
+          recentPosts.map(({ id, date, title, summary }, index) => (
+            <article key={id} className={`animate-fade-up stagger-${Math.min(index + 2, 5)}`}>
+              <Link href={`/blog/${id}`} className="group block py-8 sm:py-10 transition-colors">
+                <div className="flex items-center gap-3 mb-3">
+                  <time dateTime={date} className="font-mono text-xs tracking-wider uppercase text-[var(--text-muted)]">
+                    {date ? format(parseISO(date), "MMM dd, yyyy") : 'No Date'}
                   </time>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-3">
+                <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight group-hover:text-[var(--accent)] transition-colors mb-3">
                   {title}
                 </h2>
                 {summary && (
-                  <p className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  <p className="text-base text-[var(--text-muted)] leading-relaxed max-w-2xl">
                     {summary}
                   </p>
                 )}
-                <div className="mt-4 text-blue-600 dark:text-blue-400 font-medium text-sm sm:text-base flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Read more <span>&rarr;</span>
-                </div>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--accent)] group-hover:gap-2.5 transition-all">
+                  Read article <ArrowRight className="w-3.5 h-3.5" />
+                </span>
               </Link>
             </article>
           ))
