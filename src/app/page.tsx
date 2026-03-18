@@ -14,11 +14,10 @@ export default function Home() {
           Senior Cloud Architect at AWS Professional Services
         </p>
         <h1 className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
-          Writing about cloud systems, intelligent tools, and the work around them.
+          Cloud systems, agentic engineering and life.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
-          Notes on engineering practice, infrastructure, and how modern technical work
-          is changing.
+          Notes on infrastructure, software judgment, and the changing shape of technical work.
         </p>
       </section>
 
