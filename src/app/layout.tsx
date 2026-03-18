@@ -28,7 +28,7 @@ const syne = localFont({
 export const metadata: Metadata = {
   title: "Wilfred Grainger - Cloud Architect & Engineer",
   description:
-    "Senior Cloud Architect at AWS Professional Services. Writing about software engineering, infrastructure, and technology.",
+    "Senior Cloud Architect writing about software engineering, infrastructure, and technology.",
 };
 
 export default function RootLayout({

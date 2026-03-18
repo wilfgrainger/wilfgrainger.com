@@ -11,7 +11,7 @@ export default function Home() {
     <div className="reading-shell">
       <section className="animate-fade-up pb-12 pt-2 sm:pb-16">
         <p className="section-kicker font-mono text-[11px] sm:text-xs">
-          Senior Cloud Architect at AWS Professional Services
+          Senior Cloud Architect
         </p>
         <h1 className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
           Cloud systems, agentic engineering and life.
