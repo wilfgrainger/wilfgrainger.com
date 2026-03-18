@@ -13,7 +13,7 @@ export default function Home() {
         <p className="section-kicker font-mono text-[11px] sm:text-xs">
           Senior Cloud Architect at AWS Professional Services
         </p>
-        <h1 className="mt-5 font-display text-5xl font-extrabold tracking-tight text-balance sm:text-6xl lg:text-7xl lg:leading-[1]">
+        <h1 className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
           Writing about cloud systems, intelligent tools, and the work around them.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
