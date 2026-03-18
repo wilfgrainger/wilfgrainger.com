@@ -2,18 +2,21 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #f7f3ee;
-  --foreground: #1f1a16;
-  --surface: rgba(255, 252, 247, 0.84);
-  --surface-strong: #fcf9f4;
-  --border: rgba(72, 56, 42, 0.12);
-  --border-strong: rgba(72, 56, 42, 0.22);
-  --accent: #ab6132;
-  --accent-hover: #8d4d24;
-  --text-muted: #6f6358;
-  --text-soft: #8e8174;
-  --text-primary: #1f1a16;
-  --shadow-soft: 0 18px 45px -32px rgba(44, 30, 19, 0.22);
+  --background: #f4efe6;
+  --foreground: #201814;
+  --surface: rgba(255, 249, 240, 0.72);
+  --surface-strong: rgba(255, 252, 246, 0.92);
+  --surface-elevated: rgba(255, 248, 238, 0.88);
+  --border: rgba(89, 64, 40, 0.14);
+  --border-strong: rgba(89, 64, 40, 0.26);
+  --accent: #b85e2f;
+  --accent-hover: #97471f;
+  --accent-secondary: #1d6a63;
+  --text-muted: #66584c;
+  --text-soft: #8a7b6b;
+  --text-primary: #201814;
+  --shadow-soft: 0 22px 50px -34px rgba(56, 34, 20, 0.24);
+  --shadow-crisp: 0 10px 26px -18px rgba(87, 48, 24, 0.28);
   --page-width: 68rem;
   --reading-width: 44rem;
 }
@@ -29,18 +32,21 @@
 }
 
 .dark {
-  --background: #12100e;
-  --foreground: #f3ece5;
-  --surface: rgba(24, 21, 18, 0.88);
-  --surface-strong: #181411;
-  --border: rgba(236, 223, 210, 0.1);
-  --border-strong: rgba(236, 223, 210, 0.18);
-  --accent: #de9562;
-  --accent-hover: #efb286;
-  --text-muted: #b3a597;
-  --text-soft: #cbc0b4;
-  --text-primary: #f7f0e8;
-  --shadow-soft: 0 20px 50px -34px rgba(0, 0, 0, 0.5);
+  --background: #0f0c0a;
+  --foreground: #f3ebe1;
+  --surface: rgba(27, 20, 16, 0.78);
+  --surface-strong: rgba(34, 25, 20, 0.92);
+  --surface-elevated: rgba(40, 29, 23, 0.9);
+  --border: rgba(244, 226, 207, 0.1);
+  --border-strong: rgba(244, 226, 207, 0.18);
+  --accent: #e18a4d;
+  --accent-hover: #f1a970;
+  --accent-secondary: #55b0a8;
+  --text-muted: #b5a495;
+  --text-soft: #d1c4b6;
+  --text-primary: #fbf2e8;
+  --shadow-soft: 0 24px 55px -36px rgba(0, 0, 0, 0.58);
+  --shadow-crisp: 0 14px 28px -18px rgba(0, 0, 0, 0.52);
 }
 
 html {
@@ -50,8 +56,10 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top center, rgba(171, 97, 50, 0.08), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 20%),
+    radial-gradient(circle at 12% 10%, rgba(29, 106, 99, 0.14), transparent 24%),
+    radial-gradient(circle at top center, rgba(184, 94, 47, 0.14), transparent 30%),
+    radial-gradient(circle at 88% 16%, rgba(222, 169, 103, 0.12), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent 24%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
@@ -62,8 +70,10 @@ body {
 
 .dark body {
   background:
-    radial-gradient(circle at top center, rgba(222, 149, 98, 0.08), transparent 28%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%),
+    radial-gradient(circle at 10% 12%, rgba(85, 176, 168, 0.12), transparent 24%),
+    radial-gradient(circle at top center, rgba(225, 138, 77, 0.16), transparent 32%),
+    radial-gradient(circle at 86% 18%, rgba(138, 86, 41, 0.16), transparent 22%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
     var(--background);
 }
 
@@ -103,16 +113,17 @@ button:focus-visible {
 }
 
 .soft-panel {
-  background: var(--surface);
+  background: var(--surface-elevated);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
 }
 
 .section-kicker {
   color: var(--accent);
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .surface-button {
@@ -121,14 +132,17 @@ button:focus-visible {
   gap: 0.65rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: var(--surface-strong);
+  background: color-mix(in srgb, var(--surface-strong) 88%, white 12%);
   padding: 0.8rem 1.1rem;
   color: var(--text-primary);
+  box-shadow: var(--shadow-crisp);
+  backdrop-filter: blur(10px);
 }
 
 .surface-button:hover {
   border-color: var(--border-strong);
   color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .accent-link {
@@ -142,6 +156,11 @@ button:focus-visible {
 
 .meta-line {
   color: var(--text-soft);
+}
+
+.reading-shell > section:first-child h1,
+.reading-shell > article header h1 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 @keyframes fade-up {
