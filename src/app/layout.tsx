@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
-import { Home, FolderGit2, Linkedin } from "lucide-react";
+import { Home, Linkedin } from "lucide-react";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -58,10 +58,6 @@ export default function RootLayout({
               <NavLink href="/">
                 <Home className="w-4 h-4" />
                 <span className="hidden sm:inline">Blog</span>
-              </NavLink>
-              <NavLink href="/projects">
-                <FolderGit2 className="w-4 h-4" />
-                <span className="hidden sm:inline">Projects</span>
               </NavLink>
               <a href="https://www.linkedin.com/in/wilfred-grainger/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                 <Linkedin className="w-4 h-4" />

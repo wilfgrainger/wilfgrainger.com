@@ -4,7 +4,7 @@ date: "2026-03-17"
 summary: "The future does not belong to the people who can type the fastest. It belongs to the people who can imagine clearly, direct machines well, and turn taste into working things."
 ---
 
-`Build me a little app that feels like a rainy Sunday afternoon in Manchester. Soft colours. Big buttons. A weekly planner. A tiny bit of delight. Make it feel less like admin and more like a nice notebook.`
+`Build me a retro 80s game in the style of an arcade cabinet you would have found in a faded seaside cafe. Chunky pixels. Synthy colours. Slightly ridiculous enemies. Make it fast, playful, and just a little bit weird.`
 
 Five years ago, that sentence would have got you laughed out of most engineering meetings.
 
