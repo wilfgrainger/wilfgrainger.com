@@ -214,6 +214,18 @@ The people who do well won't just be the ones who can hand-code everything from 
 
 In other words, people with imagination and standards.
 
+And part of that orchestration is learning to manage agents properly.
+
+It feels less like issuing commands to a perfect machine and more like managing a team of senior engineers. Each one has technical strengths and weaknesses. One is great at structure but clumsy with polish. Another moves fast but gets a bit reckless. Another makes sensible decisions right up until it confidently does something bizarre.
+
+They will not code like you.
+
+That is a paradigm shift a lot of people still have not fully absorbed. The job is not to find a magical agent that thinks exactly as you do. The job is to learn how to brief well, review well, split work sensibly, and create enough feedback that the quality holds together.
+
+If you expect perfect obedience, you will be frustrated.
+
+If you treat them more like strong-but-inconsistent collaborators, you start getting much better results.
+
 ## Of Course, There Is Still Such a Thing as Bad Work
 
 This is probably the point where I should say that not everything made this way is good. Obviously.
