@@ -2,25 +2,20 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #f6efe6;
-  --background-rgb: 246, 239, 230;
-  --foreground: #1b1713;
-  --surface: rgba(255, 251, 246, 0.8);
-  --surface-strong: rgba(247, 239, 229, 0.95);
-  --surface-ink: rgba(255, 248, 240, 0.64);
-  --border: rgba(89, 67, 49, 0.14);
-  --border-strong: rgba(89, 67, 49, 0.28);
-  --accent: #b46835;
-  --accent-hover: #985126;
-  --accent-soft: rgba(180, 104, 53, 0.12);
-  --text-muted: #6e6257;
-  --text-soft: #88796b;
-  --text-primary: #1b1713;
-  --shadow-soft: 0 18px 55px -34px rgba(49, 30, 16, 0.28);
-  --shadow-card: 0 28px 70px -38px rgba(49, 30, 16, 0.34);
-  --shadow-crisp: 0 8px 28px -18px rgba(49, 30, 16, 0.22);
-  --page-width: 76rem;
-  --reading-width: 46rem;
+  --background: #f7f3ee;
+  --foreground: #1f1a16;
+  --surface: rgba(255, 252, 247, 0.84);
+  --surface-strong: #fcf9f4;
+  --border: rgba(72, 56, 42, 0.12);
+  --border-strong: rgba(72, 56, 42, 0.22);
+  --accent: #ab6132;
+  --accent-hover: #8d4d24;
+  --text-muted: #6f6358;
+  --text-soft: #8e8174;
+  --text-primary: #1f1a16;
+  --shadow-soft: 0 18px 45px -32px rgba(44, 30, 19, 0.22);
+  --page-width: 68rem;
+  --reading-width: 44rem;
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -34,23 +29,18 @@
 }
 
 .dark {
-  --background: #110e0c;
-  --background-rgb: 17, 14, 12;
-  --foreground: #f5efe7;
-  --surface: rgba(24, 19, 17, 0.82);
-  --surface-strong: rgba(30, 23, 20, 0.95);
-  --surface-ink: rgba(43, 34, 29, 0.72);
-  --border: rgba(231, 214, 196, 0.11);
-  --border-strong: rgba(231, 214, 196, 0.22);
-  --accent: #e09a6a;
-  --accent-hover: #f1b88f;
-  --accent-soft: rgba(224, 154, 106, 0.14);
-  --text-muted: #b6a79a;
-  --text-soft: #d0c2b4;
-  --text-primary: #fbf5ee;
-  --shadow-soft: 0 22px 60px -34px rgba(0, 0, 0, 0.46);
-  --shadow-card: 0 34px 78px -42px rgba(0, 0, 0, 0.5);
-  --shadow-crisp: 0 10px 28px -18px rgba(0, 0, 0, 0.34);
+  --background: #12100e;
+  --foreground: #f3ece5;
+  --surface: rgba(24, 21, 18, 0.88);
+  --surface-strong: #181411;
+  --border: rgba(236, 223, 210, 0.1);
+  --border-strong: rgba(236, 223, 210, 0.18);
+  --accent: #de9562;
+  --accent-hover: #efb286;
+  --text-muted: #b3a597;
+  --text-soft: #cbc0b4;
+  --text-primary: #f7f0e8;
+  --shadow-soft: 0 20px 50px -34px rgba(0, 0, 0, 0.5);
 }
 
 html {
@@ -60,56 +50,26 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(198, 129, 71, 0.13), transparent 28%),
-    radial-gradient(circle at 86% 12%, rgba(180, 104, 53, 0.08), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.36), transparent 25%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    radial-gradient(circle at top center, rgba(171, 97, 50, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 20%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   text-rendering: optimizeLegibility;
   @apply antialiased;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  opacity: 0.52;
-  background:
-    linear-gradient(to right, rgba(var(--background-rgb), 0.1) 0, rgba(var(--background-rgb), 0.1) 1px, transparent 1px, transparent 100%),
-    linear-gradient(to bottom, rgba(var(--background-rgb), 0.07) 0, rgba(var(--background-rgb), 0.07) 1px, transparent 1px, transparent 100%);
-  background-size: 72px 72px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 92%);
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 15% 18%, rgba(255, 255, 255, 0.3), transparent 14rem),
-    radial-gradient(circle at 82% 0%, rgba(180, 104, 53, 0.12), transparent 20rem),
-    radial-gradient(circle at 75% 82%, rgba(180, 104, 53, 0.08), transparent 18rem);
-}
-
 .dark body {
   background:
-    radial-gradient(circle at top left, rgba(224, 154, 106, 0.12), transparent 26%),
-    radial-gradient(circle at 86% 12%, rgba(224, 154, 106, 0.08), transparent 24%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 40%),
+    radial-gradient(circle at top center, rgba(222, 149, 98, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 20%),
     var(--background);
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--background);
+  color: var(--surface-strong);
 }
 
 a,
@@ -118,9 +78,8 @@ button {
     color 180ms ease,
     border-color 180ms ease,
     background-color 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    opacity 180ms ease;
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
 a:focus-visible,
@@ -143,58 +102,17 @@ button:focus-visible {
   margin-inline: auto;
 }
 
-.section-kicker {
-  color: var(--accent);
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 84%, transparent);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
-}
-
 .soft-panel {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 45%),
-    var(--surface);
+  background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px) saturate(1.08);
+  backdrop-filter: blur(12px);
 }
 
-.ink-panel {
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.14), transparent 60%),
-    var(--surface-ink);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(18px) saturate(1.06);
-}
-
-.hero-panel {
-  position: relative;
-  overflow: clip;
-}
-
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  inset: auto -8% -28% 46%;
-  height: 18rem;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%);
-  pointer-events: none;
-}
-
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+.section-kicker {
+  color: var(--accent);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .surface-button {
@@ -203,26 +121,14 @@ button:focus-visible {
   gap: 0.65rem;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  padding: 0.85rem 1.15rem;
+  background: var(--surface-strong);
+  padding: 0.8rem 1.1rem;
   color: var(--text-primary);
-  box-shadow: var(--shadow-crisp);
 }
 
 .surface-button:hover {
   border-color: var(--border-strong);
-  background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
-  transform: translateY(-1px);
-}
-
-.accent-button {
-  background: var(--accent);
-  color: #fff8f2;
-  border-color: transparent;
-}
-
-.accent-button:hover {
-  background: var(--accent-hover);
+  color: var(--accent);
 }
 
 .accent-link {
@@ -234,38 +140,14 @@ button:focus-visible {
   color: var(--accent-hover);
 }
 
-.meta-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface) 86%, transparent);
-  padding: 0.5rem 0.8rem;
-  color: var(--text-muted);
-}
-
-.grid-ornament {
-  position: relative;
-}
-
-.grid-ornament::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  background:
-    linear-gradient(90deg, transparent 0, transparent calc(100% - 1px), rgba(255, 255, 255, 0.14) calc(100% - 1px)),
-    linear-gradient(180deg, transparent 0, transparent calc(100% - 1px), rgba(255, 255, 255, 0.1) calc(100% - 1px));
-  background-size: 100% 100%;
-  opacity: 0.32;
+.meta-line {
+  color: var(--text-soft);
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(12px);
   }
 
   to {
@@ -274,43 +156,14 @@ button:focus-visible {
   }
 }
 
-@keyframes drift {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(0, 6px, 0);
-  }
-}
-
 .animate-fade-up {
-  animation: fade-up 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: fade-up 0.45s ease-out both;
 }
 
-.animate-drift {
-  animation: drift 7s ease-in-out infinite alternate;
-}
-
-.stagger-1 { animation-delay: 0.06s; }
-.stagger-2 { animation-delay: 0.12s; }
-.stagger-3 { animation-delay: 0.18s; }
-.stagger-4 { animation-delay: 0.24s; }
-.stagger-5 { animation-delay: 0.3s; }
-
-.hover-lift {
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease,
-    background-color 220ms ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-card);
-  border-color: var(--border-strong);
-}
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
 
 .prose {
   --tw-prose-body: var(--foreground);
@@ -318,92 +171,67 @@ button:focus-visible {
   --tw-prose-links: var(--accent);
   --tw-prose-bold: var(--text-primary);
   --tw-prose-code: var(--accent);
-  --tw-prose-counters: var(--text-muted);
-  --tw-prose-bullets: var(--accent);
-  --tw-prose-quotes: var(--text-soft);
+  --tw-prose-quotes: var(--text-muted);
   --tw-prose-quote-borders: var(--accent);
+  --tw-prose-bullets: var(--accent);
+  --tw-prose-counters: var(--text-muted);
   --tw-prose-hr: var(--border);
-  --tw-prose-captions: var(--text-muted);
   --tw-prose-th-borders: var(--border);
   --tw-prose-td-borders: var(--border);
   max-width: none;
 }
 
-.prose :where(h2, h3, h4) {
-  scroll-margin-top: 6rem;
-}
-
 .prose :where(h2) {
-  font-size: clamp(1.8rem, 1.3rem + 1.7vw, 2.5rem);
-  line-height: 1.08;
-  margin-top: 2.6em;
+  font-size: clamp(1.8rem, 1.45rem + 1.1vw, 2.35rem);
+  line-height: 1.1;
+  margin-top: 2.3em;
   margin-bottom: 0.8em;
 }
 
 .prose :where(h3) {
-  font-size: clamp(1.35rem, 1.1rem + 0.95vw, 1.75rem);
-  line-height: 1.15;
-  margin-top: 2em;
+  font-size: clamp(1.35rem, 1.15rem + 0.6vw, 1.7rem);
+  line-height: 1.18;
+  margin-top: 1.9em;
   margin-bottom: 0.65em;
 }
 
 .prose :where(p, ul, ol, blockquote, pre, table) {
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-}
-
-.prose :where(ul, ol) {
-  padding-left: 1.1em;
-}
-
-.prose :where(li) {
-  margin-top: 0.45em;
-  margin-bottom: 0.45em;
+  margin-top: 1.1em;
+  margin-bottom: 1.1em;
 }
 
 .prose :where(a) {
-  font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
 }
 
 .prose :where(a:hover) {
   color: var(--accent-hover);
-  border-color: color-mix(in srgb, var(--accent-hover) 44%, transparent);
 }
 
 .prose :where(blockquote) {
   font-style: normal;
-  border-left-width: 3px;
-  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
-  border-radius: 0 1.25rem 1.25rem 0;
-  padding: 1rem 1.2rem;
+  border-left-width: 2px;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
 }
 
 .prose :where(code):not(:where(pre code)) {
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface-strong) 92%, transparent);
-  border-radius: 0.55rem;
-  padding: 0.2rem 0.42rem;
-  font-weight: 500;
+  background: var(--surface-strong);
+  border-radius: 0.45rem;
+  padding: 0.14rem 0.38rem;
 }
 
 .prose :where(pre) {
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
-  border-radius: 1.3rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: var(--surface-strong);
+  border-radius: 1rem;
 }
 
 .prose :where(img) {
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-}
-
-.prose :where(hr) {
-  margin-top: 2.4em;
-  margin-bottom: 2.4em;
 }
 
 @media (prefers-reduced-motion: reduce) {
