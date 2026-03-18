@@ -11,7 +11,6 @@ type NavLinkProps = ComponentProps<typeof Link> & {
 export function NavLink({ href, children, className, ...props }: NavLinkProps) {
   const pathname = usePathname();
   const hrefStr = href.toString();
-  // The home route "/" also covers blog post sub-pages
   const isActive =
     hrefStr === "/"
       ? pathname === "/" || pathname.startsWith("/blog")
@@ -20,10 +19,10 @@ export function NavLink({ href, children, className, ...props }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 transition-colors ${
+      className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 py-2.5 text-sm transition-all ${
         isActive
-          ? "text-[var(--accent)] font-semibold"
-          : "text-[var(--text-muted)] hover:text-[var(--accent)]"
+          ? "border-[var(--border-strong)] bg-[var(--surface-strong)] text-[var(--accent)] shadow-[var(--shadow-crisp)]"
+          : "border-[var(--border)] bg-[var(--surface)] text-[var(--text-muted)] hover:border-[var(--border-strong)] hover:bg-[var(--surface-strong)] hover:text-[var(--accent)]"
       } ${className ?? ""}`}
       {...props}
     >
