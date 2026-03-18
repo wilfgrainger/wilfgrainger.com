@@ -21,7 +21,7 @@ const geistMono = localFont({
 
 const syne = localFont({
   src: "../../node_modules/@fontsource-variable/syne/files/syne-latin-wght-normal.woff2",
-  variable: "--font-display",
+  variable: "--font-syne",
   display: "swap",
 });
 

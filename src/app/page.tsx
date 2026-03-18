@@ -13,7 +13,7 @@ export default function Home() {
         <p className="section-kicker font-mono text-[11px] sm:text-xs">
           Senior Cloud Architect
         </p>
-        <h1 className="mt-5 text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
+        <h1 className="mt-5 font-display text-5xl font-semibold tracking-[-0.045em] text-balance sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
           Cloud systems, agentic engineering and life.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-[var(--text-muted)] sm:text-xl">
