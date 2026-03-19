@@ -1,347 +1,157 @@
 ---
 title: "Imagination Is the New Commodity, and Vibe Coding Is How More People Get to Spend It"
 date: "2026-03-17"
-summary: "The future does not belong to the people who can type the fastest. It belongs to the people who can imagine clearly, direct machines well, and turn taste into working things."
+summary: "AI is changing what matters in software. The scarce bit is not raw code anymore. It is taste, direction, and the ability to turn a half-formed idea into something with life in it."
 ---
 
 `Build me a retro 80s game in the style of an arcade cabinet you would have found in a faded seaside cafe. Chunky pixels. Synthy colours. Slightly ridiculous enemies. Make it fast, playful, and just a little bit weird.`
 
-Five years ago, that sentence would have got you laughed out of most engineering meetings.
+Not that long ago, saying that out loud in a serious software meeting would have felt faintly ridiculous. It is not a spec. It is not a ticket. It is not even especially disciplined. It is more like a feeling with decent punctuation.
 
-Now it can get you a working prototype before you've finished your cup of tea.
+And yet now it is enough to get something moving.
 
-And honestly, I think that's brilliant.
+That still feels a bit miraculous to me.
 
-Because for years we treated software like some kind of secret society. You had to learn the syntax, memorise the frameworks, configure fifteen things before lunch, and prove you were worthy of making a button do something useful.
+For years, building software meant pushing through a lot of ceremony before you got anywhere near the interesting part. You had to know the syntax, know the tooling, know which framework everybody respected this month, and know how to recover when the entire thing broke because one package manager had a disagreement with another. A lot of energy went into proving you could survive the process.
 
-Now we're in this strange new world where you can describe what you want, prod the machine a bit, tell it what's wrong, and slowly shape the result until it matches the thing you had in your head.
+The process mattered because code was the bottleneck. If you could write it, you had leverage. If you could not, a good idea was often destined to remain a note in your phone, a half-drawn mockup, or one of those conversations that ends with, "Someone should build that."
 
-That thing in your head is the valuable part.
+That gap is narrowing. Fast.
 
-Not the typing.
-Not the ceremony.
-Not the amount of pain you endured to create a dropdown menu with rounded corners.
+So the question changes. If code is no longer the scarcest part of making software, what is?
 
-## The Bit We've Been Valuing Wrong
+I keep coming back to the same answer: imagination. Not imagination in the dreamy, vague sense. Not standing around admiring possibilities. I mean the practical version of it. The ability to notice friction, picture something better, describe it clearly enough to pursue, and then keep shaping it until it stops feeling generic and starts feeling alive.
 
-For a long time, code itself was the bottleneck.
+That part has always mattered. It just used to be hidden behind all the technical gates, which is probably why so many of us learned to talk as if it barely counted.
 
-You could have a great idea for a website, a tool, a silly game, a little side project, or something genuinely useful for work, but the gap between "this would be cool" and "this actually exists" was enormous.
+## We Have Probably Been Valuing the Wrong Bit
 
-You needed time. You needed confidence. You needed technical knowledge. And, ideally, you needed the emotional resilience to survive whatever error message npm had decided to throw at you that day.
+For a long time, the industry talked as though implementation was the only serious part of the job and everything upstream of that was a bit fluffy. Ideas were cheap. Taste was subjective. Vision was for keynote speakers. The real work, apparently, started when somebody opened the editor.
 
-That gap is getting smaller very quickly.
+I have never quite believed that.
 
-Which means the valuable thing is shifting too.
+Anyone who has made anything decent knows the invisible part is often the hardest part. Knowing what should exist. Knowing what should be left out. Knowing when something technically works but still feels dead on arrival. Knowing the difference between a product that solves a problem and one that just adds another screen to somebody's day.
 
-I don't think the scarce resource in the future is code.
+That is not fluff. That is judgement.
 
-I think it's imagination.
+AI makes this more obvious, not less. Once a machine can produce a plausible first draft of almost anything, the real differentiator moves to the person directing it. Can you tell the difference between competent and compelling? Can you look at something that is ninety percent there and identify the ten percent that makes all the difference? Can you resist the temptation to ship the first shiny thing that sort of works?
 
-Useful imagination, specifically.
-
-Not vague "ooh wouldn't it be nice if..." imagination. I mean the kind where you can actually picture a better tool, a nicer workflow, a more interesting product, or a better way for something to feel.
-
-Can you spot a problem worth fixing?
-
-Can you describe what better looks like?
-
-Can you tell when the thing the AI gave you is bland, ugly, confusing, or almost great but not quite there yet?
-
-That's the skill.
-
-That is where the leverage is moving.
-
-It helps you write.
-It helps you design.
-It helps you build products.
-It helps you prototype.
-It helps you explain an idea without drowning in implementation details.
-
-And now, thanks to AI tools, it also helps you code.
+That is where the leverage is moving, and once you see that, a lot of the current argument around AI starts to look slightly beside the point.
 
 ![Sketches, sticky notes, and a laptop laid out like a studio desk](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200)
 *The modern workshop looks less like a server room and more like a studio.*
 
-## Vibe Coding and the Slight Panic It Causes
+## Vibe Coding, Minus the Nonsense
 
-The phrase "vibe coding" annoys some people, which is usually a sign that it's probably onto something.
+"Vibe coding" is one of those phrases that sounds unserious enough to annoy exactly the sort of people it was always going to annoy. Fair enough. There is a silly version of it floating around online: prompt, generate, post screenshot, declare victory, quietly ignore the fact that the thing falls apart the second a real person touches it.
 
-And to be fair, there is a rubbish version of it.
+That version deserves to be mocked.
 
-You know the one. Prompt. Generate. Post screenshot. "Built this in 12 minutes." No tests. No structure. The mobile view looks like it lost a fight.
+But there is a better version, and it is much more interesting than the caricature.
 
-That version deserves a bit of mockery.
+The good version feels less like cheating and more like creative direction. You start with instinct. You set a tone. You give the machine some boundaries, some references, some examples of what "good" should feel like. Then you react. You tighten things. You throw bits away. You ask for another pass. You sharpen the language. You simplify the layout. You fix the logic. You get closer, then closer again.
 
-But the good version of vibe coding is not that.
+It is messy in the way most worthwhile creative work is messy.
 
-The good version is much more like creative direction.
+People sometimes talk about this as if the presence of AI removes authorship, but I do not think that is quite right. If anything, it throws authorship into sharper relief. When the machine can generate endlessly, your decisions matter more. The machine can offer options. It cannot care. It cannot have taste on your behalf. It cannot know what you meant by "make it feel generous" or "make this less smug" unless you can recognise that quality yourself and keep steering toward it.
 
-You start with an idea.
-You set the tone.
-You define some constraints.
-You see what comes back.
-You keep the good bits.
-You throw away the rubbish.
-You push it again.
+That is not an incidental skill. That is the whole game. And once you look at it that way, the process starts resembling something much more familiar than most software people are comfortable admitting.
 
-That doesn't feel like cheating to me. It feels like using better tools.
+## It Feels Closer to Art Than Some People Are Comfortable With
 
-It reminds me a bit of the old arguments people used to make about digital photography, or synthesisers, or desktop publishing. The tool got easier to use, so some people decided it must therefore be less real.
+This is the point where some engineers start backing slowly toward the exit, but I mean it: a lot of modern software making now feels closer to art direction than old-school programming culture ever wanted to admit.
 
-But the hard part was never just pressing the button.
+Not because every generated app is beautiful. Most are not. Most are perfectly serviceable in the same way hotel corridor art is perfectly serviceable. Nothing wrong with it, exactly. Nothing much to remember either.
 
-The hard part is knowing what should exist in the first place.
+But look at how people actually work when they are trying to make something good.
 
-## It Feels More Like Art Than People Want to Admit
+They are not only asking for functionality. They are reaching for mood, shape, character, rhythm. They are saying they want a tool to feel calm, or clear, or quietly confident. They want the onboarding to feel welcoming instead of corporate. They want an interface that feels like it was made by somebody who has actually felt the pain of the problem.
 
-This is the bit where some software people start rolling their eyes, but I mean it anyway: vibe coding is a kind of modern-day art.
+That is creative work. It is not less real because the material happens to be code.
 
-Not because every AI-generated app is a masterpiece. Most of them are absolutely not. Most of them are a bit naff, if we're being honest.
+You are still taking something half-seen in your head and turning it into something other people can experience. That has always been the trick. Paint does it. Music does it. Writing does it. Increasingly, software does it too.
 
-But look at the process.
+And that matters because software has become one of the main ways we shape daily life. The tools we use at work, the things we tap on our phones, the systems that quietly govern how information moves around us, all of it carries a certain emotional texture. Someone decided how cold or warm it should feel. Someone decided whether it should delight, hurry, patronise, soothe, confuse, or disappear into the background. Those decisions are design decisions, yes, but they are also deeply human ones.
 
-You often start with a feeling, not a full implementation plan.
+And that is why the accessibility side of this matters so much. More people can now participate in making those decisions tangible.
 
-You say things like:
+Designers can prototype without waiting for a handoff. Founders can test an instinct while the idea is still warm. Teachers can make awkward little internal tools for their classrooms. Curious people who used to stop at "I would not even know where to start" can now, quite genuinely, start.
 
-- I want this page to feel calm.
-- I want this app to feel premium, but not smug.
-- I want this workflow to feel fun enough that people don't immediately hate using it.
-- I want this tool to feel like it was made by a human who actually understands the problem.
-
-Those are creative constraints.
-
-Then you work the material.
-
-You prompt.
-You tweak.
-You test.
-You fiddle with spacing.
-You rewrite the copy.
-You remove three features you didn't need.
-You keep nudging it until the thing finally has a pulse.
-
-That feels pretty creative to me.
-
-It might end up as code instead of paint or music or prose, but it's still the same basic move. You take something invisible in your head and turn it into something other people can use.
-
-That's art's whole trick.
-
-And the really exciting part is that a lot more people can now join in.
-
-People who used to get blocked by syntax can prototype.
-People who lacked confidence can experiment.
-Designers can make working things.
-Founders can test ideas without waiting on a six-week dev cycle.
-Curious weirdos can build odd little tools just because they want to.
-
-That does not feel like the death of craft to me.
-
-It feels like craft becoming more accessible.
+That feels good. Healthy, even.
 
 ![A neon-lit desk with code, sketches, and visual mockups sharing the same space](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200)
 *Software is becoming a creative medium that more people can actually touch.*
 
-## The Best Part Is Not Speed
+## The Most Interesting Change Is Not Speed
 
-Everyone talks about speed first.
+If software is becoming a more expressive medium, the obvious next question is who gets to use it. That is where speed matters, but not in the way people usually mean.
 
-And yes, speed is great. I like speed. Speed pays the mortgage. Speed is lovely when you need to get something shipped before your enthusiasm evaporates.
+Speed gets all the headlines because speed is easy to demonstrate. "I built this in an afternoon" makes a better post than "I was finally able to explore an idea I used to feel locked out of." But the second one is the bigger shift.
 
-But speed is not the most interesting part.
+The best thing about these tools is not that experienced people can go faster, though they can. It is that more people can get over the starting line at all.
 
-Accessibility is.
+For years, software could be oddly exclusionary. Not always on purpose. Sometimes the barriers were genuinely necessary because the work was genuinely hard. But some of it was just accumulated ritual. A lot of smart, capable people bounced off not because they lacked ideas, but because the path from idea to implementation was littered with enough friction to make them give up before anything interesting happened.
 
-For years, making software meant surviving a maze of abstractions. Some of that made people better engineers. Some of it was just pointless gatekeeping dressed up as rigour.
+That is changing.
 
-Now imagine:
+Now a teenager with good instincts can prototype something useful without first passing through six layers of tooling pain. A parent can automate a boring household admin task instead of just resenting it every week. A designer can move beyond static screens and learn by making. A domain expert can build a scrappy internal tool that is rough around the edges but solves a real problem better than the giant enterprise platform nobody likes using.
 
-- a teenager with a sharp idea and no formal training
-- a teacher who wants a little tool for her classroom
-- a parent who wants to automate one stupid weekly task
-- a designer who can already see the product but used to get stuck at "open terminal"
+That is not the death of craft. It is the widening of access to craft.
 
-Those people can build more now than they could before.
-
-That matters.
-
-It means software starts behaving a bit less like an elite trade and a bit more like literacy.
-
-Not everyone needs to become a deep systems engineer.
-
-That's fine.
-
-We don't dismiss writing because not every writer can explain the history of punctuation.
-
-We don't dismiss photography because not every photographer built the camera.
-
-And we probably shouldn't dismiss AI-assisted creation just because not everyone using it can implement a binary tree from memory while someone from Hacker News watches disapprovingly.
-
-Useful things will still get made.
-Beautiful things will still get made.
-And some of those things will be made by people who would previously never have crossed the starting line.
+It means software starts to behave a little more like literacy and a little less like priesthood. Which is exciting, but it also creates a new problem straight away.
 
 ## Taste Starts Mattering More, Not Less
 
-When generation gets easier, selection gets harder.
+There is a catch, of course. When making becomes easier, curation becomes harder.
 
-That's the trade-off.
+We are going to be absolutely flooded with average output. In many ways we already are. Landing pages with the same overconfident tone. Apps with perfectly adequate structure and absolutely no pulse. Products that are technically polished but spiritually weightless. You can feel when something has been generated without being properly guided. It has all the parts, but no point of view.
 
-Anyone can now generate ten landing pages, six app concepts, three logos, a dashboard, and a chirpy explanation of why it's all "production-ready" before lunch.
+That is why taste matters so much.
 
-Most of it will be average.
+Taste is what stops you accepting the first thing the machine hands back. It is what makes you pause when the copy sounds hollow, when the layout looks expensive but says nothing, when the feature list grows because nobody had the nerve to decide what the product was actually for. Taste is restraint as much as it is flair. It is knowing when to make something weirder, and when to make it simpler, and when to kill it entirely.
 
-Which means your edge is no longer just output.
+This is true in code as well. AI agents are useful, but they are not magical little oracles. They are more like talented colleagues with odd blind spots. One is quick but slapdash. Another is careful but humourless. Another will make ten sensible choices and then one truly unhinged one with complete confidence. If you expect perfect obedience, you will be miserable. If you learn how to brief well, review properly, and keep your standards intact, they become extraordinarily helpful.
 
-Your edge becomes taste.
+That, again, is a creative skill as much as a technical one. Which also means the standards question does not disappear just because the tools get friendlier.
 
-Knowing what is worth making.
-Knowing what looks cheap.
-Knowing what feels confusing.
-Knowing when a simple thing is being turned into a ridiculous thing.
-Knowing when the AI has produced complete nonsense with immense confidence.
+## Lowering the Barrier Should Not Mean Lowering the Standard
 
-That's why I don't really buy the idea that AI kills creativity.
+It is worth saying plainly that plenty of AI-assisted work is still bad. Some of it is lazy. Some of it is careless. Some of it is the same old mediocre software, just produced faster and dressed in louder marketing.
 
-If anything, it exposes lazy creativity.
+None of this automatically makes the output good.
 
-And it rewards people who can actually direct.
+You still have to think. You still have to test. You still have to notice when the words are clumsy, when the flow is annoying, when the logic does not hold up, when a feature should be removed rather than expanded. The point is not to produce more nonsense at industrial speed. The point is to free up more energy for the parts that matter most.
 
-Slightly brutal, maybe. But also clarifying.
+Less time wrestling syntax for its own sake. More time deciding what deserves to exist.
 
-The people who do well won't just be the ones who can hand-code everything from scratch. They'll be the ones who can orchestrate tools, make decisions, spot bad output, and keep asking better questions.
+That is a trade I will take, partly because of what it does to the emotional side of making things.
 
-In other words, people with imagination and standards.
+## From "Somebody Should Build That" to "I Might Actually Try"
 
-And part of that orchestration is learning to manage agents properly.
+This is the bit that keeps me optimistic.
 
-It feels less like issuing commands to a perfect machine and more like managing a team of senior engineers. Each one has technical strengths and weaknesses. One is great at structure but clumsy with polish. Another moves fast but gets a bit reckless. Another makes sensible decisions right up until it confidently does something bizarre.
+There used to be a graveyard where good ideas went to die. They died in notebooks. They died in draft emails. They died in conversations at the pub where everyone agreed something ought to exist and then moved on because the activation energy was too high.
 
-They will not code like you.
+Now, more often than not, you can just have a go.
 
-That is a paradigm shift a lot of people still have not fully absorbed. The job is not to find a magical agent that thinks exactly as you do. The job is to learn how to brief well, review well, split work sensibly, and create enough feedback that the quality holds together.
+You can turn a half-formed hunch into a prototype while the energy is still there. You can make a weird little tool on a Tuesday evening just because it is bothering you that it does not exist. You can find out quickly whether an idea has legs instead of spending six months worshipping it in the abstract.
 
-If you expect perfect obedience, you will be frustrated.
+That changes the emotional texture of making things. People experiment more. They learn faster. They get unstuck sooner. Imagination stops being a private, frustrating thing and becomes something you can put under pressure, test in daylight, and refine.
 
-If you treat them more like strong-but-inconsistent collaborators, you start getting much better results.
+That is a profound shift, and it is really the reason I keep coming back to all of this.
 
-## Of Course, There Is Still Such a Thing as Bad Work
+## Final Thought
 
-This is probably the point where I should say that not everything made this way is good. Obviously.
+The future is not going to be short of generated output. We are going to have more than enough of that.
 
-You've seen the nonsense.
+What will still be rare is original direction. Clear taste. Emotional intelligence. The ability to sense what is missing and keep pushing until the thing in front of you matches the thing you felt was possible.
 
-Prompt. Generate. Screenshot. Victory lap. Meanwhile the button still says "Click Here" and the layout explodes on mobile.
+That is why I think imagination is becoming such a valuable commodity.
 
-That is not the glorious future of creative technology. That is just low standards wearing a shiny jacket.
+It chooses the problem. It shapes the experience. It notices when something technically works but still has no soul. It is the part that keeps going past the first draft.
 
-The goal is not to make bad software faster.
+At its best, vibe coding gives more people access to that loop. Not because the machine replaces the maker, but because it lowers the wall between intention and expression.
 
-The goal is to lower the barrier to entry without lowering the ambition of what gets made.
+And that seems important.
 
-The good version still involves effort. Just effort in different places.
-
-You still need to review things properly.
-You still need to fix the logic.
-You still need to improve the words.
-You still need to test the thing.
-You still need to notice when a feature should be cut rather than expanded.
-
-It isn't less serious.
-
-It's just a different allocation of effort.
-
-Less time proving you know semicolons.
-More time deciding what deserves to exist.
-
-## From "Someone Should Build This" to "I'll Have a Go"
-
-This is the bit I find genuinely exciting.
-
-Imagination used to get trapped.
-
-It lived in notebooks, half-finished documents, little sketches, and that classic sentence:
-
-Someone should build this.
-
-Now you can actually have a go.
-
-You can turn a hunch into a prototype tonight.
-You can build a weird little internal tool this afternoon.
-You can test a product idea while the energy is still there, instead of six months later when the moment has died.
-
-That changes the whole emotional rhythm of making things.
-
-People try more.
-They learn faster.
-They get feedback sooner.
-And because they get feedback sooner, their ideas get better faster too.
-
-Imagination stops being this abstract, floaty thing and becomes operational.
-
-You can test it.
-Shape it.
-Improve it.
-Bin it and start again.
-
-That's a huge change.
-
-## So What Do You Actually Do With This?
-
-I don't think the lesson here is "stop learning fundamentals."
-
-Far from it.
-
-I just think we need to stop pretending imagination is the fluffy bit and implementation is the only serious bit.
-
-Imagination is becoming the leverage point.
-
-So if you build things for a living, it probably makes sense to get better at:
-
-- describing products clearly
-- collecting good references
-- developing stronger taste
-- rewriting prompts until they are precise
-- learning enough engineering to spot when something is flimsy
-- using AI tools like instruments, not magic wands
-
-And mostly, just make things.
-
-Make odd things.
-Make tiny things.
-Make extremely specific tools for daft little problems.
-Make software that has some personality to it.
-
-That is how you build the muscle.
-
-Not by standing on the side shouting about whether this counts as real swimming.
-
-## Final Thought, Before I Sound Too Earnest
-
-The future will have no shortage of generated output.
-
-What it will lack is original direction.
-
-That's why I think imagination is going to become such a useful commodity.
-
-It picks the problem.
-It shapes the experience.
-It decides what "good" feels like.
-It keeps going when the first version is lifeless.
-
-And vibe coding, at its best, gives far more people access to that creative loop.
-
-So yes, I do think vibe coding is a kind of modern-day art.
-
-Not because every generated app is beautiful.
-
-Most definitely aren't.
-
-But because it turns software into a more expressive medium, and makes that medium accessible to far more people.
-
-That feels important.
-
-The people who do well in this next phase won't just be the people who can command the machine.
-
-They'll be the people who have something interesting to say to it.
+The people who thrive in this next phase will not just be the ones who can command the machine most efficiently. They will be the ones who can bring a point of view to it, and recognise when the thing they are making has finally come alive.
