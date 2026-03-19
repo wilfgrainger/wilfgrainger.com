@@ -24,6 +24,8 @@ I keep coming back to the same answer: imagination.
 
 And I do not mean that in the floaty, daydreamy sense. I mean vision. The ability to think of something novel. To spot a gap in the market before it has an obvious label on it. To have the startup idea, or at least the strong instinct that something is missing and could be made better. To notice friction other people have just learned to live with because it sits in a spreadsheet, an inbox, or some cursed internal workflow nobody has had the will to fix. To picture a product, a tool, or an experience that does not exist yet, and describe it clearly enough that it can be built.
 
+The shape of it is usually quite ordinary. Two people in operations are exporting CSVs every Friday, cleaning them by hand, and emailing finance because nothing talks to anything else properly. For years, the person who noticed that pattern still had a long way to go before they could test a fix. Now, in many cases, they can get to a rough first version quickly enough to find out whether the instinct was right.
+
 That part has always mattered. It was just easier to overlook when so much attention was absorbed by the mechanics of implementation.
 
 ## We Have Probably Been Valuing the Wrong Bit
@@ -38,7 +40,7 @@ That is not fluff. That is judgement.
 
 AI makes this more obvious, not less. Once a machine can produce a plausible first draft very quickly, more value shifts to the person directing it. Can you tell the difference between competent and compelling? Can you look at something that is almost there and identify the missing piece? Can you resist the temptation to ship the first shiny thing that sort of works, especially when speed makes it feel more impressive than it is?
 
-That is where more of the leverage is moving, and once you see that, a lot of the current argument around AI starts to look a bit misframed.
+That is where more of the leverage is moving, and once you see that, a lot of the current argument around AI starts to look a bit misframed. The important shift is not that machines suddenly have better ideas. It is that the cost of turning an idea into a testable first draft has fallen sharply.
 
 ![Sketches, sticky notes, and a laptop laid out like a studio desk](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200)
 *The modern workshop looks less like a server room and more like a studio.*
@@ -54,6 +56,8 @@ But there is a better version, and it is much more interesting than the caricatu
 The good version feels less like cheating and more like creative direction. You start with instinct. Maybe it is a product hunch, maybe it is a weird little startup idea, maybe it is just the feeling that a gap everybody tolerates could actually be closed. You set a tone. You give the machine some boundaries, some references, some examples of what "good" should feel like. Then you react. You tighten things. You throw bits away. You ask for another pass. You sharpen the language. You simplify the layout. You fix the logic. You realise the first idea was three products mashed together. You cut two of them. You get closer, then closer again.
 
 It is messy in the way most worthwhile work is messy. Less "press button, receive app." More iteration, editing, and judgement.
+
+That distinction matters. AI drastically reduces the cost of first drafts. It does not remove the need for product judgement, technical judgement, or the boring grown-up work that turns a prototype into something dependable.
 
 People sometimes talk about this as if the presence of AI removes authorship, but I do not think that is quite right. If anything, it throws authorship into sharper relief. When the machine can generate endlessly, your decisions matter more. The machine can offer options. It cannot care. It cannot have taste on your behalf. It cannot know what you meant by "make it feel generous" or "make this less smug" unless you can recognise that quality yourself and keep steering toward it. And it definitely cannot tell you whether the thing is merely polished or actually worth existing.
 
@@ -92,6 +96,8 @@ Speed gets all the headlines because speed is easy to demonstrate. "I built this
 
 The best thing about these tools is not that experienced people can go faster, though they can. It is that more people can get over the starting line at all.
 
+That does not mean everyone suddenly becomes a software engineer. It means more people can participate in product discovery, prototyping, and validation without needing a full team before they are allowed to learn anything.
+
 For years, software could be oddly exclusionary. Not always on purpose. Sometimes the barriers were genuinely necessary because the work was genuinely hard. But some of it was just accumulated ritual. A lot of smart, capable people bounced off not because they lacked ideas, but because the path from idea to implementation was littered with enough friction to make them give up before anything interesting happened.
 
 That is changing.
@@ -122,7 +128,7 @@ It is worth saying plainly that plenty of AI-assisted work is still bad. Some of
 
 None of this automatically makes the output good.
 
-You still have to think. You still have to test. You still have to notice when the words are clumsy, when the flow is annoying, when the logic does not hold up, when a feature should be removed rather than expanded. You still have to ask the rude but necessary question: if this did not exist tomorrow, would anybody actually miss it? The point is not to produce more nonsense at industrial speed. The point is to free up more energy for the parts that matter most.
+You still have to think. You still have to test. You still have to notice when the words are clumsy, when the flow is annoying, when the logic does not hold up, when a feature should be removed rather than expanded. You still have to ask the rude but necessary question: if this did not exist tomorrow, would anybody actually miss it? Lowering the cost of exploration is good. Lowering the cost of delusion is not. The point is not to produce more nonsense at industrial speed. The point is to free up more energy for the parts that matter most.
 
 Less time wrestling syntax for its own sake. More time deciding what deserves to exist.
 
