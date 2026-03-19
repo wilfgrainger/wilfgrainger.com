@@ -1,103 +1,156 @@
 ---
-title: "Vibe Coding: Riding the AI Wave with Google Anti-Gravity IDE and Jules"
+title: "Vibe Coding: What Changes When Google Anti-Gravity IDE and Jules Write the First Draft"
 date: "2024-05-15"
-summary: "A look at 'Vibe Coding'—the new era of development where Google's Anti-Gravity IDE and Jules help you build apps efficiently."
+summary: "A more grounded look at vibe coding with Google's Anti-Gravity IDE and Jules: where the workflow genuinely helps, what it changes, and where it still falls short."
 ---
 
-"Build me a small app that tracks when my houseplants need watering. Keep it simple. Calm colours. Nothing that looks like accounting software."
+`Jules, the reminder logic is wrong again. A fern set to water every three days is showing up on today's list every morning.`
 
-That is a more useful starting point than a lot of programmers are comfortable admitting.
+That is a more honest starting point for "vibe coding" than the usual cinematic version where somebody types a dreamy prompt and receives a polished app before the coffee cools.
 
-The phrase *vibe coding* sounds unserious, which is unfortunate but also quite funny. It makes the whole thing sound like software is now being assembled by incense and loose hand gestures. The better version is more grounded than that. You still need judgement. You still need standards. You are just spending less time typing ceremonial boilerplate and more time steering.
+The interesting thing about AI-assisted development is not that it removes effort. It is that it moves the effort around. You spend less time laying foundations by hand and more time noticing what feels off, tightening the brief, and deciding whether the thing in front of you is actually useful or just superficially complete.
 
-That is what interests me about tools like Google's Anti-Gravity IDE and Jules. Not that they make software effortless. Mostly they don't. But they do move the centre of gravity a bit closer to product thinking and a bit further away from repetitive setup.
+That is where tools like **Google's Anti-Gravity IDE** and **Jules** start to matter. Not as magic, and not as a replacement for engineering judgement, but as a different way of getting from idea to first working version.
 
 ![A futuristic developer casually sipping coffee while a glowing holographic AI interface writes code](https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000)
-*A dramatic stock image, because naturally AI tools must always appear to live in blue light.*
+*AI helps most when it gets you to something concrete you can react to.*
 
-## What People Mean by "Vibe Coding"
+## What "Vibe Coding" Actually Changes
 
-At its best, vibe coding means describing the thing you want in plain language, getting a workable first draft quickly, and then behaving like an editor rather than a stenographer.
+The phrase still sounds a bit unserious, which is probably why it spread. Fair enough. There is a silly version of it online: prompt something vague, accept whatever comes back, post a screenshot, and quietly ignore the bits that would not survive contact with a real user.
 
-You are not writing every line by hand. You are setting direction, reviewing what comes back, correcting it, narrowing the brief, and deciding which bits deserve to survive.
+The useful version is less glamorous.
 
-At its worst, it means prompting once, posting a screenshot, and pretending the job is done.
+It feels more like directing than conjuring. You describe the outcome, the constraints, and the tone you want. The AI gives you a first pass. You react. You trim. You correct. You discover that part of your idea was fuzzy. You tighten it. You discover another part was more complicated than you assumed. You deal with that too.
 
-That version deserves ridicule.
-
-The useful version is different. It lets you start from intention rather than setup. Instead of burning the first afternoon on routing, auth scaffolding, and various configuration rites that nobody actually loves, you get something on screen early enough to react to.
-
-That matters because reaction is usually where product judgement gets sharper. It is easier to improve a rough thing than a blank editor.
+That is the shift. The machine is good at getting you to a draft. You are still responsible for whether the draft deserves to become a product.
 
 ## Where Anti-Gravity and Jules Fit
 
-The basic appeal of a stack like Anti-Gravity plus Jules is simple: you describe the app, the tool scaffolds a plausible version, and then you iterate.
+In this setup, **Anti-Gravity IDE** is the environment where the work happens, while **Jules** is the assistant helping shape and modify the codebase through prompts and follow-up instructions.
 
-In practical terms, that means the system can help with things like:
+The appeal is straightforward enough:
 
-- setting up the initial project structure;
-- wiring together common components and flows;
-- generating first-pass logic and tests; and
-- applying follow-up changes across the codebase when you refine the brief.
+- you can describe an app in plain language instead of scaffolding every piece manually
+- you can revise across the stack without bouncing between ten separate setup tasks
+- you can get to a runnable version quickly enough to learn something before the idea goes cold
 
-That does not make the machine the architect. It makes it fast hands.
+That does not mean the workflow is effortless. It means the bottleneck shifts from typing everything yourself to briefing well, reviewing carefully, and correcting the model when it confidently does something slightly absurd.
 
-The real leverage is still in the brief. If you know what should exist, what should not, and what "good" looks like for the product, these tools can compress the distance between idea and prototype quite a bit.
+## One Workflow Example That Holds Up Better Than the Hype
 
-If you do not know those things, you just get a faster route to average software.
+A simple example is more useful than a grand claim, so take a small internal tool.
 
-## A Better Example Than the Usual Hype
+Imagine you want a dashboard for tracking houseplant watering. Nothing revolutionary. Just a tiny app where you can:
 
-Take a small internal tool: a dashboard for tracking houseplant watering schedules.
+- add a plant
+- set a watering frequency in days
+- see which plants need attention today
+- get a basic reminder view without opening a spreadsheet
 
-That is exactly the sort of project that used to die in the "nice idea, can't be bothered to set everything up" stage.
+In the old workflow, you might spend the first hour or two doing boring but necessary setup: project structure, frontend framework choice, backend wiring, database schema, form validation, date handling, maybe a bit of styling so it does not look entirely unloved.
 
-With an AI-first workflow, the first prompt can be plain English:
+With Anti-Gravity and Jules, the starting point becomes a prompt more like this:
 
-> Build a simple app for tracking houseplants, their watering frequency, and what needs attention today. Keep the interface minimal and calm.
+> Build a small plant-watering tracker with a React frontend and a lightweight backend. I need a list of plants, a form to add new ones, a next-watering date, and a dashboard showing what is due today. Keep the UI minimal and calm rather than glossy.
 
-A useful toolchain can turn that into a rough app surprisingly quickly. You get a form, a list, a dashboard, some underlying logic, and something visible enough to critique.
+That is enough to get a first pass moving.
 
-That is the important part. Now you can say:
+Jules can scaffold the app structure, create the initial components, wire up a database, and produce something runnable. That part is genuinely useful because it gets you to the point where you can stop imagining the app and start reacting to it.
 
-- the interface is too busy;
-- the green looks like a supermarket brand guideline;
-- the watering logic is wrong;
-- the notifications are overkill; or
-- this should really be a tiny personal tool, not a pretend SaaS product.
+Then the real work begins.
 
-Those are product decisions. They are also the part many people actually enjoy.
+Maybe the layout is serviceable but bland. Maybe the dates are technically correct but hard to scan. Maybe the reminders work until time zones get involved. Maybe the generated form accepts nonsense values because the validation is too loose.
 
-## What Changes for the Developer
+This is the part people tend to skip when they tell the story too quickly. The win is not that the app appeared. The win is that you can now iterate on something concrete instead of losing momentum in setup.
 
-I do not think this makes developers obsolete. I think it changes what good developers spend more of their time doing.
+A realistic sequence looks more like this:
 
-When the tool can generate the first pass, the human job shifts upward a little:
+1. Generate the first version.
+2. Run it immediately.
+3. Notice that the dashboard logic is wrong for recurring dates.
+4. Ask Jules to trace the calculation and add tests around the bug.
+5. Tighten the prompt so the UI feels calmer and less generic.
+6. Manually review the changed files because the fix may solve the visible bug while introducing a new assumption somewhere else.
 
-- framing the problem clearly;
-- spotting where the output is brittle, vague, or overbuilt;
-- tightening the product scope;
-- reviewing the code for sense rather than just existence; and
-- keeping the whole thing honest.
+That is a grounded use case for vibe coding. Less ceremony up front. Faster feedback. Still plenty of judgement required.
 
-That last bit matters. AI-generated software has a strong tendency to sound confident while being slightly wrong, which is not a new problem in technology, but it is now available at much greater speed.
+![A minimalist floating IDE interface against a starry background](https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?auto=format&fit=crop&q=80&w=1000)
+*The first draft can arrive quickly. The useful version still takes steering.*
 
-So yes, the workflow gets smoother. But the standard still has to come from somewhere, and that somewhere is you.
+## What This Way of Building Helps With
 
-## The Trade-Off Nobody Should Pretend Away
+Where this workflow genuinely helps is not hard to see.
 
-The obvious upside is speed. The less fashionable truth is that speed mainly helps if you already have taste.
+### 1. It lowers the activation energy
 
-If you can recognise what is clumsy, what is over-engineered, what is solving the wrong problem, and what should be cut, these tools are genuinely useful.
+A small idea can stay alive long enough to be tested. That matters more than people admit. Plenty of decent internal tools and side projects used to die in the setup phase, not because the idea was bad, but because the path from thought to prototype was annoyingly long.
 
-If you cannot, they happily generate a very polished version of muddled thinking.
+### 2. It keeps momentum during iteration
 
-That is why I find the whole thing slightly contrarian rather than utopian. Vibe coding is real. The productivity boost is real. The accessibility is real. But none of that removes the need for judgement. In some ways it increases it, because now you can produce bad software much faster and with a better hero image.
+When the app exists early, feedback gets sharper. It is easier to say, "this flow is clumsy" or "that data should be grouped differently" when you can actually click the thing.
 
-## Final Take
+### 3. It makes cross-stack changes feel less heavy
 
-What I like about Anti-Gravity and Jules is not that they magically eliminate development work. It is that they reduce the dull gap between "this should exist" and "here is something I can react to."
+If you want to adjust the UI, update the schema, and patch the backend logic in one pass, AI help is genuinely handy. That kind of joined-up change used to carry enough friction that you might postpone it.
 
-That is useful. It gets more ideas onto the table. It lets more people participate in shaping software earlier. And it nudges the work a bit closer to direction, editing, and product sense.
+### 4. It is good at the boring first draft work
 
-My view is straightforward: vibe coding is valuable when it helps you reach the real work sooner. The real work is still judgement. Always was.
+Scaffolding, repetitive CRUD wiring, base components, and plain-vanilla tests are exactly the sort of tasks where having an assistant is useful. Not because those tasks do not matter, but because they rarely deserve to be the thing draining all your energy.
+
+## The Trade-Offs People Should Be More Honest About
+
+This is the part that tends to get flattened in product demos.
+
+### The output often looks more finished than it really is
+
+Generated apps can appear convincing before they are dependable. You get a polished surface early, which is nice, but also dangerous. A neat interface can hide shaky assumptions, brittle logic, and edge cases nobody has thought through properly.
+
+### The model can be quick and wrong in ways that waste time
+
+Sometimes Jules will fix exactly what you asked for. Sometimes it will fix the symptom and miss the cause. Sometimes it will change three files correctly and make a baffling fourth edit with complete confidence. You still need to read the diff like an adult.
+
+### Ambiguous prompts create ambiguous software
+
+If your instruction is fuzzy, the app usually reflects that fuzziness. That sounds obvious, but it becomes more important when the machine is willing to fill in the blanks for you. Vibe coding rewards clarity more than it removes the need for it.
+
+### You can accumulate strange debt surprisingly fast
+
+Because it is easy to keep saying "one more change," you can end up with a codebase shaped by a month of half-remembered prompts. It works, until it does not, and then you are trying to reconstruct the reasoning from generated code that was never really planned as a system.
+
+That does not make the workflow bad. It just means the cost moves downstream if you are careless upstream.
+
+## The Developer Role Does Not Disappear. It Becomes More Editorial.
+
+A lot of the anxiety around AI coding tools assumes there are only two states: either you handwrite everything, or the machine takes over.
+
+In practice, the role changes in a more mundane way.
+
+You spend less time proving you know syntax from memory and more time doing higher-level work:
+
+- setting constraints
+- spotting weak assumptions
+- deciding what should and should not be built
+- checking whether the logic actually matches reality
+- stopping the model from overcomplicating simple things
+
+That is still engineering work. It is just a bit closer to review, direction, and systems thinking than the old heroic image of writing every line yourself.
+
+And to be honest, plenty of good software work always looked like that anyway.
+
+![A cute robot plant sitting on a desk next to a laptop](https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=1000)
+*The assistant can help produce the draft. You still own whether the product makes sense.*
+
+## So Is This Better?
+
+Sometimes, yes.
+
+If you are exploring a new idea, building a small internal tool, or trying to get from concept to a testable prototype without drowning in setup, this style of workflow is genuinely helpful. Anti-Gravity and Jules can remove a lot of the dead time between "I think this might be useful" and "now I can actually try it."
+
+If you are working on something with deeper architectural demands, strict reliability requirements, or messy real-world edge cases, the tools help less by replacing work and more by accelerating the first 30 or 40 percent of it. After that, the value depends heavily on how carefully you review, test, and reshape what was generated.
+
+That is probably the most honest framing.
+
+Vibe coding is not interesting because it makes software effortless. It is interesting because it changes where the effort sits. The setup gets lighter. The iteration gets faster. The responsibility for taste, correctness, and restraint becomes more obvious.
+
+That feels like the real story here.
