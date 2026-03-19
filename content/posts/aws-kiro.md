@@ -23,13 +23,13 @@ It's brilliant for prototypes. You describe what you want, the AI builds somethi
 - The test suite passes but doesn't actually cover the edge case that just hit production
 - Nobody can remember why the data model was shaped that way
 
-[Andrej Karpathy coined "vibe coding"](https://x.com/karpathy/status/1886192184808149187) to describe this workflow approvingly, but he was talking about personal projects. Teams shipping software to real users need a bit more rigour than vibes.
+[Andrej Karpathy coined "vibe coding"](https://x.com/karpathy/status/1886192184808149187) to describe this workflow approvingly, but he was talking about personal projects. Teams shipping software to real users usually need a bit more rigour than vibes.
 
-Kiro sits at the intersection: it wants AI velocity *with* the paper trail that makes large codebases maintainable.
+Kiro sits in the middle: it wants AI velocity *with* the paper trail that makes a codebase maintainable.
 
 ## How Spec-Driven Development Works in Kiro
 
-Every feature you build in Kiro goes through three phases. You can shortcut them (it's not enforced), but the whole system is designed to reward going through them properly.
+Every feature you build in Kiro goes through three phases. You can shortcut them—nothing is forcing you—but the whole system is designed to reward doing them properly.
 
 ```
   Your idea
@@ -59,7 +59,7 @@ The first thing Kiro asks you to do is write requirements using the [EARS syntax
 
 > **WHEN** [triggering condition] **THE SYSTEM SHALL** [expected behaviour]
 
-It looks almost too basic, but the discipline it forces is genuinely useful. You can't hide vagueness in this format. Compare these two:
+It looks almost too basic, but the discipline is useful. You can't hide vagueness in this format. Compare these two:
 
 | Vague                        | EARS                                                                                               |
 |------------------------------|----------------------------------------------------------------------------------------------------|
@@ -72,24 +72,24 @@ Kiro will help you generate these from a natural language description, and it'll
 
 ### Phase 2: Design
 
-Once requirements are locked, Kiro generates a design document. This isn't a wall of text—it's structured around:
+Once requirements are locked, Kiro generates a design document. This isn't a wall of text. It's structured around:
 
 - Architecture overview (which components, how they connect)
 - Data models and schemas
 - API endpoint specs and request/response shapes
 - Sequence diagrams for the main user flows
 
-This is the phase where you catch problems cheaply. Finding out that your data model doesn't support a requirement costs nothing here. Finding it out in code review costs a day. Finding it in production costs your Sunday evening.
+This is where you catch problems cheaply. Finding out that your data model doesn't support a requirement costs almost nothing here. Finding it out in code review costs a day. Finding it in production costs your Sunday evening.
 
 ### Phase 3: Tasks
 
 Finally, Kiro breaks the design into a `tasks.md` file—a list of discrete, ordered implementation steps. Each task links back to the requirement it satisfies and the design decision it implements.
 
-The AI then works through these tasks one by one, with you reviewing and approving as it goes. You're not just accepting a wall of generated code—you're approving individual, understandable changes.
+The AI then works through these tasks one by one, with you reviewing and approving as it goes. You're not accepting a wall of generated code. You're approving smaller, understandable changes.
 
 ## The Features That Actually Matter
 
-Beyond the spec workflow, Kiro has three features worth knowing about:
+Beyond the spec workflow, Kiro has three features worth knowing about.
 
 ### Steering Files
 
@@ -100,7 +100,7 @@ Beyond the spec workflow, Kiro has three features worth knowing about:
 - Architecture constraints ("all database access goes through the repository layer")
 - Project-specific context ("this app targets EU users, GDPR applies")
 
-The AI reads these files before every action. You write them once and your whole team benefits automatically—even new joiners who haven't memorised the unwritten rules yet.
+The AI reads these files before every action. You write them once and the whole team benefits—even the new joiner who hasn't yet learned the unwritten rules.
 
 ### Agent Hooks
 
@@ -111,43 +111,43 @@ The AI reads these files before every action. You write them once and your whole
 - **On commit:** Update the `CHANGELOG.md` based on what changed
 - **On test failure:** Have the agent diagnose why and suggest a fix
 
-It's the kind of automation that sounds like a neat demo until you've had it running for a week and realised you've stopped manually doing three things you used to hate doing.
+It's the kind of feature that sounds like a neat demo until you've had it running for a week and quietly stopped doing three annoying chores by hand.
 
 ### MCP Integration
 
-Kiro supports the [Model Context Protocol](https://modelcontextprotocol.io/), which means you can connect it to external tools—GitHub, JIRA, AWS services, databases—and the AI can act on them directly from the IDE. You can ask Kiro to check why a CI run failed, look up a ticket's acceptance criteria, or query a staging database to understand a bug, all without switching context.
+Kiro supports the [Model Context Protocol](https://modelcontextprotocol.io/), which means you can connect it to external tools—GitHub, JIRA, AWS services, databases—and the AI can act on them directly from the IDE. You can ask Kiro to check why a CI run failed, look up a ticket's acceptance criteria, or query a staging database to understand a bug without context-switching quite so much.
 
 ## Kiro vs. Cursor vs. Copilot
 
-Here's an honest take, because "X is better than Y" pieces are usually nonsense:
+Here's the honest version, because "X is better than Y" posts are usually nonsense:
 
-| Tool     | Best for                                        | Trade-off                                     |
-|----------|-------------------------------------------------|-----------------------------------------------|
+| Tool     | Best for                                         | Trade-off                                      |
+|----------|--------------------------------------------------|------------------------------------------------|
 | Kiro     | Teams, enterprise, compliance-sensitive projects | More upfront work; inline completion is weaker |
-| Cursor   | Solo devs, startups, fast iteration             | Less structure; can generate technical debt fast |
-| Copilot  | Everyone already using GitHub; incremental help | Still more autocomplete than agent             |
+| Cursor   | Solo devs, startups, fast iteration              | Less structure; can generate technical debt fast |
+| Copilot  | Teams already using GitHub; incremental help     | Still more autocomplete than agent             |
 
-If you're a solo developer building a weekend project, Kiro's spec workflow will feel like unnecessary overhead—use Cursor. If you're a team of five building something that needs to be maintained in a year, Kiro's upfront investment starts paying dividends quickly.
+If you're a solo developer building a weekend project, Kiro's spec workflow will probably feel like overhead. Use Cursor. If you're a team of five building something that still needs to make sense in a year, Kiro's upfront friction starts to look sensible.
 
-The real answer for many teams is both: Cursor for speed during exploratory spikes, Kiro for anything going into production.
+For plenty of teams, the real answer is both: Cursor for exploratory spikes, Kiro for anything headed toward production.
 
 ![Developers collaborating around a whiteboard](https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000)
 *The spec phase is where teams align before the AI starts generating.*
 
 ## Getting Started
 
-Kiro is available for macOS, Windows, and Linux from [kiro.dev](https://kiro.dev/). The free tier gives you 50 credits a month (500 bonus credits on signup), which is enough to genuinely evaluate it on a real project.
+Kiro is available for macOS, Windows, and Linux from [kiro.dev](https://kiro.dev/). The free tier gives you 50 credits a month (plus 500 bonus credits on signup), which is enough to evaluate it on a real project rather than a toy one.
 
 If you're already a VS Code user, the setup is familiar—Kiro is built on the same foundation and can import your extensions and settings. The [official docs](https://kiro.dev/docs/) walk you through your first spec in about ten minutes.
 
-The community-maintained [Book of Kiro](https://kiro-community.github.io/book-of-kiro/en/features/cheat-sheet/) is worth bookmarking for the feature cheat sheet alone—it covers hooks, steering, and MCP setup in one place.
+The community-maintained [Book of Kiro](https://kiro-community.github.io/book-of-kiro/en/features/cheat-sheet/) is worth bookmarking for the cheat sheet alone. It covers hooks, steering, and MCP setup in one place.
 
 ## The Honest Verdict
 
 Kiro isn't trying to be the fastest AI coding tool. It's trying to be the one that doesn't leave you staring at a codebase six months later wondering what any of it means.
 
-That's a bet worth taking seriously. The vibe coding era produced a lot of prototypes. The next era needs to produce software that's actually maintainable—and Kiro's spec-driven approach is one of the more credible attempts at making that happen without throwing AI velocity out the window.
+That's a serious bet, and I think it's a good one. The vibe-coding era produced a lot of prototypes. The next era needs to produce software that is still understandable after the demo glow wears off.
 
-The inline code completion isn't as snappy as Cursor's. The learning curve is real. But if you've ever shipped something fast and then spent two months paying the technical debt, you'll recognise the problem Kiro is trying to solve.
+The inline completion isn't as slick as Cursor's. The learning curve is real. But if you've ever shipped something quickly and then spent the next two months paying interest on the debt, you'll recognise the problem Kiro is solving.
 
-Worth trying. The first 500 credits are free.
+My take: worth trying, especially if you're building with a team and you already know speed is not your main problem.

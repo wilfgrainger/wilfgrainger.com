@@ -4,109 +4,100 @@ date: "2024-05-15"
 summary: "A look at 'Vibe Coding'—the new era of development where Google's Anti-Gravity IDE and Jules help you build apps efficiently."
 ---
 
-If you've spent time configuring build tools or hunting down obscure bugs, you might appreciate the shift currently happening in software development.
+"Build me a small app that tracks when my houseplants need watering. Keep it simple. Calm colours. Nothing that looks like accounting software."
 
-It's called **Vibe Coding**, and the combination of **Google's Anti-Gravity IDE** and **Jules** is changing how we approach building applications.
+That is a more useful starting point than a lot of programmers are comfortable admitting.
+
+The phrase *vibe coding* sounds unserious, which is unfortunate but also quite funny. It makes the whole thing sound like software is now being assembled by incense and loose hand gestures. The better version is more grounded than that. You still need judgement. You still need standards. You are just spending less time typing ceremonial boilerplate and more time steering.
+
+That is what interests me about tools like Google's Anti-Gravity IDE and Jules. Not that they make software effortless. Mostly they don't. But they do move the centre of gravity a bit closer to product thinking and a bit further away from repetitive setup.
 
 ![A futuristic developer casually sipping coffee while a glowing holographic AI interface writes code](https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000)
-*A conceptual look at AI-assisted development.*
+*A dramatic stock image, because naturally AI tools must always appear to live in blue light.*
 
-Let's explore how these tools reduce friction and help focus on application logic rather than boilerplate.
+## What People Mean by "Vibe Coding"
 
-## Understanding "Vibe Coding"
+At its best, vibe coding means describing the thing you want in plain language, getting a workable first draft quickly, and then behaving like an editor rather than a stenographer.
 
-Instead of spending the first few days setting up routing, configuring databases, and writing boilerplate authentication logic, what if you could describe the requirements directly?
+You are not writing every line by hand. You are setting direction, reviewing what comes back, correcting it, narrowing the brief, and deciding which bits deserve to survive.
 
-**Vibe Coding** (a term popularized by AI researcher Andrej Karpathy) describes a workflow where the developer's role shifts from writing code line-by-line to *guiding* an AI assistant.
+At its worst, it means prompting once, posting a screenshot, and pretending the job is done.
 
-You provide the vision, the "vibe," and the AI handles the execution. You curate, review, and tweak.
+That version deserves ridicule.
 
-### Why Vibe Coding is a Game Changer:
+The useful version is different. It lets you start from intention rather than setup. Instead of burning the first afternoon on routing, auth scaffolding, and various configuration rites that nobody actually loves, you get something on screen early enough to react to.
 
-*   **Speed:** Go from idea to a working prototype in minutes, not weeks.
-*   **Accessibility:** You don't need to memorize the exact syntax for a Python list comprehension or a complex SQL join.
-*   **Focus on the "Why":** You spend your energy solving the actual business problem, rather than fighting syntax errors.
+That matters because reaction is usually where product judgement gets sharper. It is easier to improve a rough thing than a blank editor.
 
-## Google Anti-Gravity IDE & Gemini Pro
+## Where Anti-Gravity and Jules Fit
 
-Standard code editors are excellent, but they often leave the heavy lifting entirely to the developer.
+The basic appeal of a stack like Anti-Gravity plus Jules is simple: you describe the app, the tool scaffolds a plausible version, and then you iterate.
 
-This is where **Google's Anti-Gravity IDE** comes in. It's an AI-first development environment powered by the **Gemini Pro** model.
+In practical terms, that means the system can help with things like:
 
-It handles much of the boilerplate and mundane refactoring tasks automatically.
+- setting up the initial project structure;
+- wiring together common components and flows;
+- generating first-pass logic and tests; and
+- applying follow-up changes across the codebase when you refine the brief.
 
-![A minimalist floating IDE interface against a starry background](https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?auto=format&fit=crop&q=80&w=1000)
-*The interface of Google's Anti-Gravity IDE.*
+That does not make the machine the architect. It makes it fast hands.
 
-### How It Works Under the Hood
+The real leverage is still in the brief. If you know what should exist, what should not, and what "good" looks like for the product, these tools can compress the distance between idea and prototype quite a bit.
 
-The process of vibe coding with this stack is remarkably simple and straightforward:
+If you do not know those things, you just get a faster route to average software.
 
-1. **The Vision:** You start with an idea in your head and communicate it to **Jules** using a natural language prompt.
-2. **Context and Understanding:** Jules uses **Gemini Pro** to analyze the intent, break it down into requirements, and determine the necessary components.
-3. **Execution in Anti-Gravity:** The **Anti-Gravity IDE** generates the project scaffolding, writes the core logic, and builds the initial test suite.
-4. **Review:** You review what was built to see if it meets your goals.
-    * *If it needs tweaking:* You prompt Jules for adjustments.
-    * *If the result is correct:* You're ready to deploy.
+## A Better Example Than the Usual Hype
 
-## Jules: The AI Architect
+Take a small internal tool: a dashboard for tracking houseplant watering schedules.
 
-So, where does **Jules** fit into all this?
+That is exactly the sort of project that used to die in the "nice idea, can't be bothered to set everything up" stage.
 
-If Anti-Gravity is the spaceship and Gemini Pro is the engine, Jules is your co-pilot. Jules is Google's platform agent that orchestrates the entire process.
+With an AI-first workflow, the first prompt can be plain English:
 
-Instead of just highlighting syntax errors, Jules actively collaborates with you:
+> Build a simple app for tracking houseplants, their watering frequency, and what needs attention today. Keep the interface minimal and calm.
 
-1.  **The "I have an idea" Phase:** You tell Jules, *"Hey, I want to build a dashboard that tracks my houseplants' watering schedules and sends me SMS alerts."*
-2.  **The Scaffolding Phase:** Jules uses Gemini Pro to understand the requirements, then Anti-Gravity instantly generates the React frontend, the Node.js backend, and the database schema.
-3.  **The Iteration Phase:** You look at the generated app. *"Hmm, Jules, make the buttons greener, and let's add a weather API integration so it knows if it rained."*
-4.  **Updates:** Jules updates the code across the stack seamlessly.
+A useful toolchain can turn that into a rough app surprisingly quickly. You get a form, a list, a dashboard, some underlying logic, and something visible enough to critique.
 
-It serves as an assistant that can quickly iterate based on feedback.
+That is the important part. Now you can say:
 
-![A cute robot plant sitting on a desk next to a laptop](https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=1000)
-*Tracking plant schedules with Jules.*
+- the interface is too busy;
+- the green looks like a supermarket brand guideline;
+- the watering logic is wrong;
+- the notifications are overkill; or
+- this should really be a tiny personal tool, not a pretend SaaS product.
 
-## A Hypothetical Walkthrough: The "Plant Tracker" App
+Those are product decisions. They are also the part many people actually enjoy.
 
-Let's look at what this workflow looks like in practice by building a simple application to track plant watering schedules.
+## What Changes for the Developer
 
-**Step 1: Setting the Stage.** I open Anti-Gravity and prompt: *"Jules, I need a simple React and Node.js app that tracks houseplant watering schedules. The user needs to be able to add a plant, set a watering frequency in days, and see a dashboard of what needs water today. Provide a minimalist, green-themed UI."*
+I do not think this makes developers obsolete. I think it changes what good developers spend more of their time doing.
 
-**Step 2: Scaffolding.** Jules analyzes the prompt with Gemini Pro. Anti-Gravity sets up the project, running the necessary initialization commands, scaffolding an Express server, and establishing a basic SQLite database schema. It creates components for a `PlantList`, a `PlantForm`, and a `Dashboard`.
+When the tool can generate the first pass, the human job shifts upward a little:
 
-**Step 3: The First Vibe Check.** I run the app. It works, but it feels a little... generic. The greens are too bright, and the font is boring.
+- framing the problem clearly;
+- spotting where the output is brittle, vague, or overbuilt;
+- tightening the product scope;
+- reviewing the code for sense rather than just existence; and
+- keeping the whole thing honest.
 
-**Step 4: Iterative Vibing.** I go back to Jules. *"Hey, the app works, but it looks like a spreadsheet. Can we make the green darker, like a forest green (#2E8B57)? And let's swap the font to something more elegant, maybe 'Playfair Display' for the headers."*
+That last bit matters. AI-generated software has a strong tendency to sound confident while being slightly wrong, which is not a new problem in technology, but it is now available at much greater speed.
 
-Jules understands the intent and applies the changes across the necessary files, updating the Tailwind configuration and injecting the correct font links.
+So yes, the workflow gets smoother. But the standard still has to come from somewhere, and that somewhere is you.
 
-### Handling Logic Errors
+## The Trade-Off Nobody Should Pretend Away
 
-Bugs will still occur, as this workflow doesn't completely eliminate logic errors.
+The obvious upside is speed. The less fashionable truth is that speed mainly helps if you already have taste.
 
-Let's say I test the app, and a plant that needs water every 3 days is showing up as needing water *every single day*.
+If you can recognise what is clumsy, what is over-engineered, what is solving the wrong problem, and what should be cut, these tools are genuinely useful.
 
-In the old days, I'd drop `console.log()` statements everywhere and spend an hour stepping through date-parsing logic. With vibe coding, I highlight the issue: *"Jules, the watering calculation is broken. A plant set for 3 days is showing up every day."*
+If you cannot, they happily generate a very polished version of muddled thinking.
 
-Jules reviews the backend code. It realizes that the Date object comparison was stripping the time zone incorrectly, causing the delta to always be greater than 0. It rewrites the helper function using a robust library like `date-fns` and adds a unit test to prevent the regression.
+That is why I find the whole thing slightly contrarian rather than utopian. Vibe coding is real. The productivity boost is real. The accessibility is real. But none of that removes the need for judgement. In some ways it increases it, because now you can produce bad software much faster and with a better hero image.
 
-## The Evolution of the Developer
+## Final Take
 
-There's a lot of fear that AI tools will replace developers. But if you look closely at the "Plant Vibe" example, who is doing the actual *building*?
+What I like about Anti-Gravity and Jules is not that they magically eliminate development work. It is that they reduce the dull gap between "this should exist" and "here is something I can react to."
 
-Jules is typing the code, yes. But **you** are the architect. You are making the decisions about user experience, data models, and business logic.
+That is useful. It gets more ideas onto the table. It lets more people participate in shaping software earlier. And it nudges the work a bit closer to direction, editing, and product sense.
 
-The shift moves the developer from typing code to focusing on architecture and application design.
-
-### Focusing on Functionality
-
-The term "vibe coding" might sound informal, but it captures the essence of this transition. Developers are less bogged down by the mechanics of programming, such as build tools and dependency conflicts.
-
-Instead, the focus is entirely on the functionality of the product.
-
-## A Smoother Workflow
-
-Development can be complex, but tools like Google's Anti-Gravity IDE and intelligent agents like Jules reduce the friction between an idea and a functional application.
-
-When starting a new project, instead of spending hours on configuration, you can leverage these tools to quickly prototype and build out functionality. It's a significant shift that streamlines the process of bringing an idea to life.
+My view is straightforward: vibe coding is valuable when it helps you reach the real work sooner. The real work is still judgement. Always was.
