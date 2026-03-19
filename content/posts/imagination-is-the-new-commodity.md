@@ -20,7 +20,9 @@ That gap is narrowing. Fast.
 
 So the question changes. If code is no longer the scarcest part of making software, what is?
 
-I keep coming back to the same answer: imagination. Not imagination in the dreamy, vague sense. Not standing around admiring possibilities. I mean the practical version of it. The ability to notice friction, picture something better, describe it clearly enough to pursue, and then keep shaping it until it stops feeling generic and starts feeling alive.
+I keep coming back to the same answer: imagination.
+
+And I do not mean that in the floaty, daydreamy sense. I mean vision. The ability to think of something novel. To spot a gap in the market before it has an obvious label on it. To have the startup idea, or at least the strong instinct that something is missing and could be made better. To notice friction other people have just learned to live with. To picture a product, a tool, or an experience that does not exist yet, and describe it clearly enough that it can be built.
 
 That part has always mattered. It just used to be hidden behind all the technical gates, which is probably why so many of us learned to talk as if it barely counted.
 
