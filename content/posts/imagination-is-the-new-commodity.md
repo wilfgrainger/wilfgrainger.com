@@ -1,7 +1,8 @@
 ---
 title: "Imagination Is the New Commodity, and Vibe Coding Is How More People Get to Spend It"
 date: "2026-03-17"
-summary: "The scarce thing in software is shifting. Not raw code, but vision: spotting the gap, having the angle, and pushing an idea past competent into interesting."
+summary: "Code is getting cheaper; judgement is getting more valuable. The advantage now is seeing the right problem, shaping a better direction, and iterating until it becomes genuinely useful."
+published: true
 ---
 
 `Build me a retro 80s game in the style of an arcade cabinet you would have found in a faded seaside cafe. Chunky pixels. Synthy colours. Slightly ridiculous enemies. Make it fast, playful, and just a little bit weird.`
@@ -100,6 +101,21 @@ You still have to think. You still have to test. You still have to notice when t
 Lowering the cost of exploration is good. Lowering the cost of delusion is not.
 
 That is the trade I find compelling here: less energy spent wrestling syntax for its own sake, more energy spent deciding what deserves to exist.
+
+## A Practical Filter for Builders
+
+If you are using AI to build, a simple three-part filter helps keep the work grounded:
+
+1. **Is the problem real?**  
+   Can you point to a repeated frustration, wasted hour, or awkward workaround that people already feel?
+2. **Is the first version useful in one sitting?**  
+   If someone uses it for ten minutes, do they leave with less friction than they started with?
+3. **Did quality improve with each iteration?**  
+   Not just more features. Better clarity, better flow, fewer sharp edges, and fewer assumptions hiding in the logic.
+
+If all three are true, keep going. If not, do not add more scaffolding. Tighten the idea first.
+
+That is the discipline I think this era asks for: prototype faster, yes, but judge harder.
 
 ## Final Thought
 
