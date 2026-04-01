@@ -11,6 +11,7 @@ export interface PostData {
   title: string;
   date: string;
   summary?: string;
+  published: boolean;
 }
 
 export interface PostContent extends PostData {
@@ -43,8 +44,9 @@ export function getSortedPostsData(): PostData[] {
       title: matterResult.data.title || 'Untitled',
       date: matterResult.data.date || '',
       summary: matterResult.data.summary || '',
+      published: matterResult.data.published === true,
     };
-  });
+  }).filter((post) => post.published);
 
   // Sort posts by date
   return allPostsData.sort((a, b) => {
@@ -62,6 +64,11 @@ export async function getPostData(id: string): Promise<PostContent> {
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  const isPublished = matterResult.data.published === true;
+
+  if (!isPublished) {
+    throw new Error(`Post "${id}" is not published`);
+  }
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
@@ -85,6 +92,7 @@ export async function getPostData(id: string): Promise<PostContent> {
     title: matterResult.data.title || 'Untitled',
     date: matterResult.data.date || '',
     summary: matterResult.data.summary || '',
+    published: isPublished,
     readingTime,
   };
 }
