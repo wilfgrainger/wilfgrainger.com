@@ -11,6 +11,21 @@ A sentence like that would not have counted as serious software work for very lo
 
 And yet it is now enough to get something moving. Not a fake demo. Not a Figma daydream. Something you can click, react to, dislike, improve.
 
+### Artifact: one-prompt seaside arcade experiment
+
+The game below is generated from that exact prompt and hosted as a playable blog artifact.
+
+<iframe
+  src="/artifacts/seaside-arcade/"
+  title="Neon Shrimp Panic 86"
+  width="100%"
+  height="760"
+  loading="lazy"
+  style="border:2px solid #3d2a5d;border-radius:12px;background:#0b041c;"
+></iframe>
+
+If your browser blocks the embed, [open the game in a new tab](/artifacts/seaside-arcade/).
+
 That still feels significant to me, because it changes where the interesting work starts.
 
 For years, building software meant pushing through a lot of ceremony before you reached the part where taste or product instinct mattered. You had to know the syntax, the tooling, the framework everybody respected this month, and how to unbreak the whole thing when one package manager picked a fight with another.
