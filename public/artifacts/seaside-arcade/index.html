@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Jetty Blaster 64</title>
+    <style>
+      :root {
+        --bg: #09051b;
+        --cab: #1a1036;
+        --line: #5b45a3;
+        --ink: #f1ecff;
+        --accent: #5bf6ff;
+        --hot: #ff6ee6;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at 15% 8%, #2f1c73 0%, transparent 42%),
+          radial-gradient(circle at 85% 88%, #0c4b68 0%, transparent 38%),
+          var(--bg);
+        color: var(--ink);
+        font-family: "Trebuchet MS", "Verdana", sans-serif;
+      }
+      .cabinet {
+        width: min(96vw, 860px);
+        border: 3px solid #3d2f75;
+        background: linear-gradient(180deg, #23124d, var(--cab));
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+      }
+      .marquee {
+        text-align: center;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        color: #ffe86b;
+        text-shadow: 0 0 14px rgba(255, 232, 107, 0.7);
+        margin-bottom: 10px;
+        font-size: clamp(14px, 2.6vw, 25px);
+      }
+      .screen {
+        position: relative;
+        border: 3px solid #2f225f;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      canvas {
+        width: 100%;
+        display: block;
+        border: 1px solid #1d153d;
+        background: #09071b;
+      }
+      .screen::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(transparent 65%, rgba(255, 255, 255, 0.06));
+      }
+      .hud {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font: 700 12px/1.3 "Courier New", monospace;
+      }
+      .touch {
+        display: none;
+        margin-top: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .touch-group { display: flex; gap: 8px; }
+      .touch button {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: #1d1342;
+        color: var(--ink);
+        border-radius: 999px;
+        min-height: 54px;
+        min-width: 54px;
+        padding: 0 14px;
+        font-weight: 700;
+      }
+      .touch .fire { background: #3a1551; border-color: #8f4db7; color: #ffe1ff; margin-left: auto; }
+      .hint {
+        margin-top: 8px;
+        color: #d2c6ff;
+        font-size: 11px;
+      }
+      @media (pointer: coarse) {
+        .touch { display: grid; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cabinet">
+      <div class="marquee">JETTY BLASTER 64</div>
+      <section class="screen">
+        <canvas id="game" width="800" height="480" aria-label="Jetty Blaster 64 game canvas"></canvas>
+      </section>
+      <div class="hud">
+        <span id="score">SCORE 000000</span>
+        <span id="wave">WAVE 1</span>
+        <span id="lives">HULL 3</span>
+      </div>
+      <div class="touch" aria-label="Touch controls">
+        <div class="touch-group">
+          <button id="touch-left" aria-label="Move left">◀</button>
+          <button id="touch-right" aria-label="Move right">▶</button>
+        </div>
+        <button id="touch-fire" class="fire" aria-label="Fire">ZAP</button>
+      </div>
+      <div class="hint">Keyboard: ← / → or A / D · Space to fire · Enter to retry.</div>
+    </main>
+
+    <script>
+      const canvas = document.getElementById('game');
+      const ctx = canvas.getContext('2d');
+      const scoreEl = document.getElementById('score');
+      const waveEl = document.getElementById('wave');
+      const livesEl = document.getElementById('lives');
+
+      const W = canvas.width;
+      const H = canvas.height;
+      const keys = new Set();
+      const touchState = { left: false, right: false, fire: false };
+
+      const state = {
+        player: { x: W / 2, y: H - 70, speed: 6 },
+        shots: [],
+        enemies: [],
+        stars: Array.from({ length: 120 }, () => ({ x: Math.random() * W, y: Math.random() * H, z: Math.random() * 2 + 1 })),
+        particles: [],
+        score: 0,
+        wave: 1,
+        lives: 3,
+        cooldown: 0,
+        over: false,
+        t: 0,
+      };
+
+      function spawnWave() {
+        state.enemies = [];
+        const lanes = 12;
+        const rows = Math.min(3 + Math.floor(state.wave / 2), 7);
+        for (let r = 0; r < rows; r++) {
+          for (let lane = 0; lane < lanes; lane++) {
+            const type = (r + lane + state.wave) % 3;
+            state.enemies.push({
+              x: 50 + lane * 58,
+              y: 60 + r * 44,
+              size: 22,
+              type,
+              wobble: Math.random() * 5,
+              hp: type === 2 ? 2 : 1,
+            });
+          }
+        }
+      }
+
+      function fire() {
+        if (state.cooldown > 0 || state.over) return;
+        state.shots.push({ x: state.player.x, y: state.player.y - 18, vy: -10 });
+        state.cooldown = 8;
+      }
+
+      function burst(x, y, color, amount = 16) {
+        for (let i = 0; i < amount; i++) {
+          state.particles.push({
+            x,
+            y,
+            vx: (Math.random() - 0.5) * 5,
+            vy: (Math.random() - 0.5) * 5,
+            life: 16 + Math.random() * 20,
+            color,
+          });
+        }
+      }
+
+      function hit(a, b, pad = 0) {
+        return Math.abs(a.x - b.x) < (a.size || 4) + (b.size || 4) - pad && Math.abs(a.y - b.y) < (a.size || 4) + (b.size || 4) - pad;
+      }
+
+      function drawPoly(points, fill, stroke) {
+        ctx.beginPath();
+        ctx.moveTo(points[0][0], points[0][1]);
+        for (let i = 1; i < points.length; i++) ctx.lineTo(points[i][0], points[i][1]);
+        ctx.closePath();
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = 2; ctx.stroke(); }
+      }
+
+      function drawEnemy(e) {
+        if (e.type === 0) {
+          drawPoly([[e.x, e.y - 16], [e.x - 18, e.y + 14], [e.x + 18, e.y + 14]], '#ff6ef2', '#a33987');
+        } else if (e.type === 1) {
+          drawPoly([[e.x - 16, e.y - 8], [e.x + 16, e.y - 8], [e.x + 9, e.y + 12], [e.x - 9, e.y + 12]], '#5af7ff', '#2e8ea4');
+        } else {
+          drawPoly([[e.x, e.y - 18], [e.x - 14, e.y - 2], [e.x - 8, e.y + 14], [e.x + 8, e.y + 14], [e.x + 14, e.y - 2]], '#ffe879', '#b59f2f');
+        }
+      }
+
+      function drawPlayer() {
+        const x = state.player.x;
+        const y = state.player.y;
+        drawPoly([[x, y - 24], [x - 26, y + 16], [x + 26, y + 16]], '#49f4ff', '#2d8a91');
+        drawPoly([[x, y - 16], [x - 14, y + 10], [x + 14, y + 10]], '#ff79ee', '#9b3c8d');
+        ctx.fillStyle = '#e7ff86';
+        ctx.fillRect(x - 3, y - 8, 6, 12);
+      }
+
+      function renderWorld() {
+        const grad = ctx.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, '#0e0a2e');
+        grad.addColorStop(0.6, '#17103e');
+        grad.addColorStop(1, '#061b30');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, W, H);
+
+        for (const s of state.stars) {
+          s.y += 0.3 * s.z;
+          if (s.y > H) { s.y = -2; s.x = Math.random() * W; }
+          ctx.fillStyle = s.z > 2 ? '#b5fdff' : '#7369bc';
+          ctx.fillRect(s.x, s.y, s.z, s.z);
+        }
+
+        const horizon = H * 0.44;
+        for (let i = 0; i < 14; i++) {
+          const y = horizon + i * 24;
+          const spread = i * 28 + 30;
+          ctx.strokeStyle = i % 2 ? '#2e2b67' : '#493497';
+          ctx.beginPath();
+          ctx.moveTo(W / 2 - spread, y);
+          ctx.lineTo(W / 2 + spread, y);
+          ctx.stroke();
+        }
+        for (let i = -8; i <= 8; i++) {
+          ctx.strokeStyle = '#29315f';
+          ctx.beginPath();
+          ctx.moveTo(W / 2, horizon);
+          ctx.lineTo(W / 2 + i * 55, H);
+          ctx.stroke();
+        }
+      }
+
+      function update() {
+        state.t++;
+        if (state.cooldown > 0) state.cooldown--;
+
+        if (!state.over) {
+          if (keys.has('ArrowLeft') || keys.has('a') || touchState.left) state.player.x -= state.player.speed;
+          if (keys.has('ArrowRight') || keys.has('d') || touchState.right) state.player.x += state.player.speed;
+          state.player.x = Math.max(36, Math.min(W - 36, state.player.x));
+          if (touchState.fire) fire();
+        }
+
+        state.shots.forEach((s) => (s.y += s.vy));
+        state.shots = state.shots.filter((s) => s.y > -30);
+
+        const drop = 0.2 + state.wave * 0.05;
+        for (const e of state.enemies) {
+          e.y += drop;
+          e.x += Math.sin(state.t * 0.035 + e.wobble) * (e.type === 1 ? 1.5 : 1.1);
+        }
+
+        for (let si = state.shots.length - 1; si >= 0; si--) {
+          for (let ei = state.enemies.length - 1; ei >= 0; ei--) {
+            const s = state.shots[si];
+            const e = state.enemies[ei];
+            if (hit({ x: s.x, y: s.y, size: 6 }, { x: e.x, y: e.y, size: e.size }, 4)) {
+              e.hp -= 1;
+              state.shots.splice(si, 1);
+              if (e.hp <= 0) {
+                burst(e.x, e.y, ['#ff74f4', '#72fbff', '#ffe87b'][e.type]);
+                state.score += 90 + e.type * 60;
+                state.enemies.splice(ei, 1);
+              }
+              break;
+            }
+          }
+        }
+
+        for (let i = state.enemies.length - 1; i >= 0; i--) {
+          const e = state.enemies[i];
+          if (e.y > H - 74 && !state.over) {
+            state.enemies.splice(i, 1);
+            state.lives -= 1;
+            burst(state.player.x, state.player.y, '#ff4a8d', 22);
+            if (state.lives <= 0) state.over = true;
+          }
+        }
+
+        for (const p of state.particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.vy += 0.04;
+          p.life -= 1;
+        }
+        state.particles = state.particles.filter((p) => p.life > 0);
+
+        if (!state.over && state.enemies.length === 0) {
+          state.wave += 1;
+          state.score += 600;
+          spawnWave();
+        }
+
+        scoreEl.textContent = `SCORE ${String(state.score).padStart(6, '0')}`;
+        waveEl.textContent = `WAVE ${state.wave}`;
+        livesEl.textContent = `HULL ${state.lives}`;
+      }
+
+      function render() {
+        renderWorld();
+        drawPlayer();
+
+        ctx.fillStyle = '#9affff';
+        state.shots.forEach((s) => ctx.fillRect(s.x - 2, s.y - 10, 4, 10));
+
+        state.enemies.forEach(drawEnemy);
+
+        for (const p of state.particles) {
+          ctx.globalAlpha = p.life / 30;
+          ctx.fillStyle = p.color;
+          ctx.fillRect(p.x, p.y, 4, 4);
+          ctx.globalAlpha = 1;
+        }
+
+        if (state.over) {
+          ctx.fillStyle = 'rgba(5, 0, 19, 0.62)';
+          ctx.fillRect(150, 170, 500, 130);
+          ctx.fillStyle = '#ffe86b';
+          ctx.font = 'bold 34px Trebuchet MS';
+          ctx.fillText('GAME OVER, SURFER', 215, 230);
+          ctx.fillStyle = '#f2d7ff';
+          ctx.font = '20px Trebuchet MS';
+          ctx.fillText('Tap or press ENTER to relaunch', 245, 268);
+        }
+      }
+
+      function loop() {
+        update();
+        render();
+        requestAnimationFrame(loop);
+      }
+
+      addEventListener('keydown', (e) => {
+        const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        keys.add(k);
+        if (k === ' ') {
+          e.preventDefault();
+          fire();
+        }
+        if (k === 'Enter' && state.over) reset();
+      });
+
+      addEventListener('keyup', (e) => {
+        const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        keys.delete(k);
+      });
+
+      function bindTouch(id, key) {
+        const el = document.getElementById(id);
+        const on = (ev) => { ev.preventDefault(); touchState[key] = true; if (key === 'fire') fire(); if (state.over && key === 'fire') reset(); };
+        const off = (ev) => { ev.preventDefault(); touchState[key] = false; };
+        el.addEventListener('pointerdown', on);
+        el.addEventListener('pointerup', off);
+        el.addEventListener('pointerleave', off);
+        el.addEventListener('pointercancel', off);
+      }
+
+      function reset() {
+        state.score = 0;
+        state.wave = 1;
+        state.lives = 3;
+        state.shots = [];
+        state.particles = [];
+        state.over = false;
+        state.player.x = W / 2;
+        spawnWave();
+      }
+
+      bindTouch('touch-left', 'left');
+      bindTouch('touch-right', 'right');
+      bindTouch('touch-fire', 'fire');
+      canvas.addEventListener('pointerdown', () => { if (state.over) reset(); });
+
+      spawnWave();
+      loop();
+    </script>
+  </body>
+</html>
